@@ -1,0 +1,215 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-display: var(--font-space-grotesk);
+  --font-body: var(--font-inter);
+  --font-mono: var(--font-jetbrains-mono);
+}
+
+* {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+html,
+body {
+  background-color: #f8fafc;
+  color: #0f172a;
+}
+
+body {
+  font-family: var(--font-body);
+}
+
+::selection {
+  background-color: #f59e0b;
+  color: #0f172a;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #f59e0b;
+}
+
+:focus-visible {
+  outline: 2px solid #f59e0b;
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+/* -------------------- Signature motifs -------------------- */
+
+/* Blueprint grid backdrop */
+.bg-blueprint {
+  background-color: #0f172a;
+  background-image: linear-gradient(rgba(245, 158, 11, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(245, 158, 11, 0.08) 1px, transparent 1px);
+  background-size: 44px 44px;
+}
+
+.bg-blueprint-light {
+  background-image: linear-gradient(rgba(15, 23, 42, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(15, 23, 42, 0.05) 1px, transparent 1px);
+  background-size: 36px 36px;
+}
+
+/* Surveyor corner brackets, used on cards / images */
+.corner-brackets {
+  position: relative;
+}
+.corner-brackets::before,
+.corner-brackets::after {
+  content: "";
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  border-color: #f59e0b;
+  opacity: 0;
+  transition: opacity 0.35s ease, transform 0.35s ease;
+  z-index: 10;
+}
+.corner-brackets::before {
+  top: 10px;
+  left: 10px;
+  border-top: 2px solid;
+  border-left: 2px solid;
+  transform: translate(4px, 4px);
+}
+.corner-brackets::after {
+  bottom: 10px;
+  right: 10px;
+  border-bottom: 2px solid;
+  border-right: 2px solid;
+  transform: translate(-4px, -4px);
+}
+.corner-brackets:hover::before,
+.corner-brackets:hover::after,
+.corner-brackets:focus-within::before,
+.corner-brackets:focus-within::after {
+  opacity: 1;
+  transform: translate(0, 0);
+}
+
+/* Glassmorphism */
+.glass {
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.glass-light {
+  background: rgba(255, 255, 255, 0.65);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border: 1px solid rgba(15, 23, 42, 0.06);
+}
+
+.navbar-blur {
+  background: rgba(15, 23, 42, 0.55);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+
+/* Dimension / measurement line — a recurring "level line" motif */
+.dimension-line {
+  position: relative;
+  height: 1px;
+  background: rgba(245, 158, 11, 0.4);
+}
+.dimension-line::before,
+.dimension-line::after {
+  content: "";
+  position: absolute;
+  top: -4px;
+  width: 1px;
+  height: 9px;
+  background: rgba(245, 158, 11, 0.6);
+}
+.dimension-line::before {
+  left: 0;
+}
+.dimension-line::after {
+  right: 0;
+}
+
+/* Eyebrow label styling */
+.eyebrow {
+  font-family: var(--font-mono);
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  font-size: 0.7rem;
+  font-weight: 500;
+}
+
+/* Gradient text */
+.text-gold-gradient {
+  background: linear-gradient(120deg, #fcc24d 0%, #f59e0b 45%, #d17e06 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Section number ticks (used only where sequence is real, e.g. Process) */
+.tick-number {
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+}
+
+/* Card hover lift */
+.lift-hover {
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.lift-hover:hover {
+  transform: translateY(-6px);
+}
+
+/* Marquee track */
+.marquee-track {
+  display: flex;
+  width: max-content;
+}
+
+/* Custom cursor dot (desktop only, ambient) */
+.cursor-ring {
+  pointer-events: none;
+  position: fixed;
+  z-index: 100;
+  width: 34px;
+  height: 34px;
+  border: 1px solid rgba(245, 158, 11, 0.6);
+  border-radius: 999px;
+  transform: translate(-50%, -50%);
+  transition: opacity 0.2s ease, width 0.25s ease, height 0.25s ease, border-color 0.25s ease;
+  mix-blend-mode: normal;
+}
+
+.container-px {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+@media (min-width: 1024px) {
+  .container-px {
+    padding-left: 4rem;
+    padding-right: 4rem;
+  }
+}
