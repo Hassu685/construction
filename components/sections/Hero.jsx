@@ -103,23 +103,6 @@ export default function Hero() {
           ))}
         </motion.div>
       </div>
-
-      {/* Scroll cue */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1.6 }}
-        className="hidden lg:flex absolute right-10 bottom-10 flex-col items-center gap-3"
-      >
-        <span className="eyebrow text-slate-400 rotate-90 origin-center translate-y-4">Scroll</span>
-        <motion.span
-          animate={{ y: [0, 8, 0] }}
-          transition={{ duration: 1.8, repeat: Infinity, ease: "easeInOut" }}
-          className="mt-6"
-        >
-          <ArrowRight className="h-4 w-4 rotate-90 text-gold-400" />
-        </motion.span>
-      </motion.div>
     </section>
   );
 }
