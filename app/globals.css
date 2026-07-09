@@ -43,7 +43,7 @@ body {
   background: #f1f5f9;
 }
 ::-webkit-scrollbar-thumb {
-  background: #cbd5e1;
+  background: #f59e0b;
   border-radius: 999px;
 }
 ::-webkit-scrollbar-thumb:hover {
