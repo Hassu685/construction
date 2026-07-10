@@ -19,36 +19,6 @@ export default function Footer() {
       <div className="absolute inset-0 bg-blueprint opacity-40 pointer-events-none" />
 
       <div className="relative container-px pt-20 pb-10">
-        {/* Newsletter */}
-        <div className="glass rounded-3xl p-8 md:p-12 flex flex-col lg:flex-row items-center justify-between gap-8 mb-16">
-          <div className="max-w-lg">
-            <span className="eyebrow text-gold-400">Stay Informed</span>
-            <h3 className="font-display text-2xl md:text-3xl font-semibold text-white mt-3">
-              Get estimating insights delivered monthly.
-            </h3>
-            <p className="text-slate-400 mt-2 text-sm">
-              Market pricing trends, code updates and project stories — no spam, unsubscribe anytime.
-            </p>
-          </div>
-          <form onSubmit={handleSubmit} className="flex w-full lg:w-auto flex-col sm:flex-row gap-3">
-            <input
-              type="email"
-              required
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              placeholder="you@company.com"
-              className="w-full sm:w-72 rounded-full bg-white/5 border border-white/15 px-5 py-3.5 text-sm text-white placeholder:text-slate-500 focus:border-gold-500 outline-none transition-colors"
-            />
-            <button
-              type="submit"
-              className="flex items-center justify-center gap-2 rounded-full bg-gold-500 text-navy-900 px-6 py-3.5 text-sm font-semibold hover:bg-gold-400 transition-colors whitespace-nowrap"
-            >
-              {submitted ? "Subscribed" : "Subscribe"}
-              <ArrowRight className="h-4 w-4" />
-            </button>
-          </form>
-        </div>
-
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 pb-14 border-b border-white/10">
           <div className="lg:col-span-2">
             <Link href="/" className="flex items-center gap-2.5 mb-4">

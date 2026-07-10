@@ -13,7 +13,7 @@ export default function AboutPreview() {
       <div className="container-px relative grid lg:grid-cols-2 gap-16 items-center">
         <Reveal direction="right">
           <div className="relative corner-brackets rounded-2xl overflow-hidden">
-            <div className="relative aspect-[4/5] w-full">
+            <div className="relative aspect-[4/3.8] w-full">
               <Image
                 src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=1600&auto=format&fit=crop"
                 alt="Engineer reviewing blueprints on site"

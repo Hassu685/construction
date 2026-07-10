@@ -8,8 +8,8 @@ export default function AnimatedCounter({ value, suffix = "", duration = 2, clas
   const isInView = useInView(ref, { once: true, amount: 0.5 });
   const motionValue = useMotionValue(0);
   const springValue = useSpring(motionValue, {
-    damping: 30,
-    stiffness: 60,
+    damping: 32,
+    stiffness: 35,
   });
 
   useEffect(() => {

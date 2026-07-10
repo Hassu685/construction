@@ -27,7 +27,7 @@ export default function ContactSection({ showMap = true, showHeading = true }) {
   ];
 
   return (
-    <section className="relative bg-surface py-24 lg:py-32">
+    <section className="relative bg-surface py-24 lg:py-32 bg-diagonal">
       <div className="container-px">
         {showHeading && (
           <SectionHeading
@@ -39,24 +39,30 @@ export default function ContactSection({ showMap = true, showHeading = true }) {
           />
         )}
 
-        <div className="grid lg:grid-cols-5 gap-6">
+        <div className="grid lg:grid-cols-5 gap-6 items-start">
           {/* Info cards + hours */}
           <div className="lg:col-span-2 flex flex-col gap-5">
-            {infoCards.map((card, i) => (
-              <Reveal key={card.title} delay={i * 0.08}>
-                <div className="flex items-start gap-4 rounded-2xl bg-white border border-navy-900/8 p-6">
-                  <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-navy-900 text-gold-400">
-                    <card.icon className="h-5 w-5" />
-                  </span>
-                  <div>
-                    <div className="text-xs uppercase tracking-wide text-slate-400 font-medium">{card.title}</div>
-                    <div className="text-navy-900 font-medium mt-1 text-sm leading-relaxed">{card.value}</div>
+            <Reveal>
+              <div className="rounded-2xl bg-white border border-navy-900/8 p-6 flex flex-col gap-5">
+                {infoCards.map((card, i) => (
+                  <div
+                    key={card.title}
+                    className={`flex items-start gap-4 ${i !== 0 ? "pt-5 border-t border-navy-900/8" : ""
+                      }`}
+                  >
+                    <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-navy-900 text-gold-400">
+                      <card.icon className="h-5 w-5" />
+                    </span>
+                    <div>
+                      <div className="text-xs uppercase tracking-wide text-slate-400 font-medium">{card.title}</div>
+                      <div className="text-navy-900 font-medium mt-1 text-sm leading-relaxed">{card.value}</div>
+                    </div>
                   </div>
-                </div>
-              </Reveal>
-            ))}
+                ))}
+              </div>
+            </Reveal>
 
-            <Reveal delay={0.24}>
+            <Reveal delay={0.1}>
               <div className="rounded-2xl bg-navy-900 p-6 text-white">
                 <div className="flex items-center gap-2 mb-4">
                   <Clock className="h-4 w-4 text-gold-400" />
@@ -72,25 +78,11 @@ export default function ContactSection({ showMap = true, showHeading = true }) {
                 </ul>
               </div>
             </Reveal>
-
-            {showMap && (
-              <Reveal delay={0.3}>
-                <div className="relative rounded-2xl overflow-hidden h-52 border border-navy-900/8 bg-navy-100">
-                  <iframe
-                    title="BuildNova office location map"
-                    src="https://www.google.com/maps?q=Tampa%20Florida&output=embed"
-                    className="w-full h-full grayscale-[15%]"
-                    loading="lazy"
-                    referrerPolicy="no-referrer-when-downgrade"
-                  />
-                </div>
-              </Reveal>
-            )}
           </div>
 
           {/* Form */}
           <Reveal direction="left" className="lg:col-span-3">
-            <div className="rounded-3xl bg-white border border-navy-900/8 p-8 sm:p-10 h-full shadow-sm">
+            <div className="rounded-3xl bg-white border border-navy-900/8 p-8 sm:p-10 shadow-sm">
               {submitted ? (
                 <motion.div
                   initial={{ opacity: 0, scale: 0.95 }}
@@ -172,7 +164,7 @@ export default function ContactSection({ showMap = true, showHeading = true }) {
                       className="group w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-full bg-gold-500 text-navy-900 px-8 py-4 text-sm font-semibold hover:bg-gold-400 transition-colors shadow-gold"
                     >
                       Submit Request
-                      <Send className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
+                      <Send className="h-4 w-4 transition-transform duration-500 group-hover:translate-x-1" />
                     </button>
                   </div>
                 </form>
@@ -180,6 +172,21 @@ export default function ContactSection({ showMap = true, showHeading = true }) {
             </div>
           </Reveal>
         </div>
+
+        {/* Full-width map */}
+        {showMap && (
+          <Reveal delay={0.15} className="mt-6">
+            <div className="relative rounded-2xl overflow-hidden h-80 sm:h-96 border border-navy-900/8 bg-navy-100">
+              <iframe
+                title="BuildNova office location map"
+                src="https://www.google.com/maps?q=Tampa%20Florida&output=embed"
+                className="w-full h-full grayscale-[15%]"
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+              />
+            </div>
+          </Reveal>
+        )}
       </div>
     </section>
   );

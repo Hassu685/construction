@@ -53,9 +53,23 @@ export default function EstimatingServicesPage() {
         eyebrow="Estimating Services"
         title="Estimates calibrated to the stage your project is in."
         description="Not every estimate needs the same accuracy. We match the estimating method to your project phase, so you're never paying for more detail than the decision requires."
+        sliderImages={[
+          {
+            src: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=1400&auto=format&fit=crop",
+            alt: "Engineer measuring construction blueprints with a calculator",
+          },
+          {
+            src: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?q=80&w=1400&auto=format&fit=crop",
+            alt: "Cost estimator reviewing spreadsheets",
+          },
+          {
+            src: "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?q=80&w=1400&auto=format&fit=crop",
+            alt: "Architectural plans and takeoff tools",
+          },
+        ]}
       />
 
-      <section className="bg-surface py-24 lg:py-32">
+      <section className="bg-surface py-24 lg:py-32 bg-dot-grid-light">
         <div className="container-px">
           <SectionHeading
             eyebrow="Estimate Types"

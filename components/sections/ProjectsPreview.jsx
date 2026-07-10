@@ -8,8 +8,9 @@ export default function ProjectsPreview() {
   const featured = projects.slice(0, 3);
 
   return (
-    <section className="relative bg-navy-950 py-24 lg:py-32">
-      <div className="container-px">
+    <section className="relative bg-navy-950 py-24 lg:py-32 overflow-hidden">
+      <div className="absolute inset-0 bg-blueprint opacity-20 pointer-events-none" />
+      <div className="container-px relative">
         <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8 mb-16">
           <SectionHeading
             eyebrow="Selected Work"

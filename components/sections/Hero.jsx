@@ -4,8 +4,6 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { ArrowRight, PlayCircle } from "lucide-react";
 import Button from "@/components/ui/Button";
-import AnimatedCounter from "@/components/ui/AnimatedCounter";
-import { stats } from "@/lib/data";
 
 export default function Hero() {
   return (
@@ -36,7 +34,7 @@ export default function Hero() {
           <motion.div
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+            transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
             className="flex items-center gap-3 mb-7"
           >
             <span className="h-px w-10 bg-gold-500" />
@@ -49,7 +47,7 @@ export default function Hero() {
                 <motion.span
                   initial={{ y: "110%" }}
                   animate={{ y: 0 }}
-                  transition={{ duration: 0.9, delay: 0.15 + i * 0.12, ease: [0.16, 1, 0.3, 1] }}
+                  transition={{ duration: 1.1, delay: 0.2 + i * 0.16, ease: [0.22, 1, 0.36, 1] }}
                   className={`block ${i === 1 ? "text-gold-gradient" : ""}`}
                 >
                   {line}
@@ -61,7 +59,7 @@ export default function Hero() {
           <motion.p
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.65, ease: [0.16, 1, 0.3, 1] }}
+            transition={{ duration: 0.9, delay: 0.75, ease: [0.22, 1, 0.36, 1] }}
             className="mt-7 max-w-xl text-base sm:text-lg text-slate-300 leading-relaxed"
           >
             BuildNova provides accurate construction estimating, quantity takeoffs and project
@@ -71,7 +69,7 @@ export default function Hero() {
           <motion.div
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.8, ease: [0.16, 1, 0.3, 1] }}
+            transition={{ duration: 0.9, delay: 0.95, ease: [0.22, 1, 0.36, 1] }}
             className="mt-10 flex flex-wrap items-center gap-4"
           >
             <Button href="/contact" variant="primary">
@@ -85,23 +83,6 @@ export default function Hero() {
             </Button>
           </motion.div>
         </div>
-
-        {/* Floating stats */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 1, ease: [0.16, 1, 0.3, 1] }}
-          className="mt-16 lg:mt-24 grid grid-cols-2 lg:grid-cols-4 gap-px rounded-2xl overflow-hidden glass"
-        >
-          {stats.map((stat, i) => (
-            <div key={stat.label} className="bg-white/[0.02] px-6 py-6 lg:py-8">
-              <div className="font-display font-semibold text-2xl sm:text-3xl text-white tick-number">
-                <AnimatedCounter value={stat.value} suffix={stat.suffix} />
-              </div>
-              <div className="mt-1.5 text-xs sm:text-sm text-slate-400">{stat.label}</div>
-            </div>
-          ))}
-        </motion.div>
       </div>
     </section>
   );

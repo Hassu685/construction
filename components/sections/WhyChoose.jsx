@@ -7,7 +7,7 @@ import { getIcon } from "@/lib/icons";
 
 export default function WhyChoose() {
   return (
-    <section className="relative bg-surface py-24 lg:py-32">
+    <section className="relative bg-surface py-24 lg:py-32 bg-diagonal">
       <div className="container-px">
         <SectionHeading
           eyebrow="Why BuildNova"

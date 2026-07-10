@@ -17,6 +17,20 @@ export default function TestimonialsPage() {
         eyebrow="Client Testimonials"
         title="What builders say after working with us."
         description="Real feedback from the developers, architects and contractors who trust our numbers on every bid."
+        sliderImages={[
+          {
+            src: "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?q=80&w=1400&auto=format&fit=crop",
+            alt: "Contractor and client shaking hands on site",
+          },
+          {
+            src: "https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=1400&auto=format&fit=crop",
+            alt: "Team meeting to review a project estimate",
+          },
+          {
+            src: "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?q=80&w=1400&auto=format&fit=crop",
+            alt: "Client reviewing project plans with a consultant",
+          },
+        ]}
       />
       <TestimonialsSlider showHeading={false} />
 

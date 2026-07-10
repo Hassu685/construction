@@ -12,7 +12,7 @@ export default function FAQAccordion({ limit, showHeading = true }) {
   const list = limit ? faqs.slice(0, limit) : faqs;
 
   return (
-    <section className="relative bg-surface py-24 lg:py-32">
+    <section className="relative bg-surface py-24 lg:py-32 bg-dot-grid-light">
       <div className="container-px max-w-3xl mx-auto">
         {showHeading && (
           <SectionHeading
@@ -30,7 +30,7 @@ export default function FAQAccordion({ limit, showHeading = true }) {
             return (
               <Reveal key={faq.question} delay={i * 0.04}>
                 <div
-                  className={`rounded-2xl border transition-colors duration-300 overflow-hidden ${
+                  className={`rounded-2xl border transition-colors duration-500 overflow-hidden ${
                     isOpen ? "border-gold-500/50 bg-white" : "border-navy-900/8 bg-white"
                   }`}
                 >

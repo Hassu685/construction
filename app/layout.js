@@ -4,6 +4,8 @@ import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import ScrollProgress from "@/components/ui/ScrollProgress";
 import LoadingScreen from "@/components/ui/LoadingScreen";
+import CustomCursor from "@/components/ui/CustomCursor";
+import FloatingActions from "@/components/ui/FloatingActions";
 import { siteConfig } from "@/lib/data";
 
 const spaceGrotesk = Space_Grotesk({
@@ -87,10 +89,12 @@ export default function RootLayout({ children }) {
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
         <LoadingScreen />
+        <CustomCursor />
         <ScrollProgress />
         <Navbar />
         <main>{children}</main>
         <Footer />
+        <FloatingActions />
       </body>
     </html>
   );

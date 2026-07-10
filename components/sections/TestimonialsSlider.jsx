@@ -83,7 +83,7 @@ export default function TestimonialsSlider({ compact = false }) {
                     setIndex(i);
                   }}
                   aria-label={`Go to testimonial ${i + 1}`}
-                  className={`h-1.5 rounded-full transition-all duration-300 ${
+                  className={`h-1.5 rounded-full transition-all duration-500 ${
                     i === index ? "w-6 bg-gold-500" : "w-1.5 bg-navy-900/20"
                   }`}
                 />

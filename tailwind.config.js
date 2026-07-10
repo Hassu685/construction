@@ -57,8 +57,9 @@ module.exports = {
         "grid-sm": "20px 20px",
       },
       boxShadow: {
-        premium: "0 20px 60px -15px rgba(15,23,42,0.35)",
-        gold: "0 10px 40px -10px rgba(245,158,11,0.45)",
+        premium: "0 20px 50px -20px rgba(15,23,42,0.28)",
+        gold: "0 10px 30px -12px rgba(245,158,11,0.35)",
+        "gold-hover": "0 14px 36px -14px rgba(245,158,11,0.45)",
         glass: "0 8px 32px 0 rgba(15,23,42,0.12)",
       },
       animation: {

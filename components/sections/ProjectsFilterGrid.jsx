@@ -13,7 +13,7 @@ export default function ProjectsFilterGrid() {
   const filtered = active === "All" ? projects : projects.filter((p) => p.category === active);
 
   return (
-    <section className="bg-surface py-24 lg:py-32">
+    <section className="bg-surface py-24 lg:py-32 bg-diagonal">
       <div className="container-px">
         <LayoutGroup>
           <div className="flex flex-wrap items-center justify-center gap-3 mb-14">
@@ -21,7 +21,7 @@ export default function ProjectsFilterGrid() {
               <button
                 key={cat}
                 onClick={() => setActive(cat)}
-                className={`relative px-5 py-2.5 rounded-full text-sm font-medium transition-colors duration-300 ${
+                className={`relative px-5 py-2.5 rounded-full text-sm font-medium transition-colors duration-500 ${
                   active === cat ? "text-navy-900" : "text-slate-500 hover:text-navy-900"
                 }`}
               >
