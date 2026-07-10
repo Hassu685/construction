@@ -29,7 +29,7 @@ export default function Hero() {
       {/* Dimension line ornament */}
       <div className="hidden lg:block absolute top-32 left-16 right-16 dimension-line" />
 
-      <div className="relative container-px w-full pt-40 pb-16 lg:pb-24">
+      <div className="relative container-px w-full pt-28 lg:pt-40 pb-16 lg:pb-24">
         <div className="max-w-4xl">
           <motion.div
             initial={{ opacity: 0, y: 16 }}
