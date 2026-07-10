@@ -60,7 +60,7 @@ export default function CustomCursor() {
         style={{ x: ringX, y: ringY }}
         animate={{
           opacity: visible ? 1 : 0,
-          scale: hovering ? 1.9 : 1,
+          scale: hovering ? 1.5 : 1,
           backgroundColor: hovering ? "rgba(245,158,11,0.12)" : "rgba(245,158,11,0)",
           borderColor: hovering ? "rgba(245,158,11,0.85)" : "rgba(245,158,11,0.55)",
         }}

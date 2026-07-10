@@ -56,9 +56,6 @@ body {
   border-radius: 2px;
 }
 
-/* -------------------- Signature motifs -------------------- */
-
-/* Blueprint grid backdrop */
 .bg-blueprint {
   background-color: #0f172a;
   background-image: linear-gradient(rgba(245, 158, 11, 0.08) 1px, transparent 1px),
