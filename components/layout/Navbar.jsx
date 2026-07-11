@@ -36,16 +36,12 @@ export default function Navbar() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-        scrolled ? "navbar-blur border-b border-white/10 py-3" : "bg-transparent py-5"
-      }`}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${scrolled ? "navbar-blur border-b border-white/10 py-3" : "bg-transparent py-5"
+        }`}
     >
       <div className="container-px flex items-center justify-between">
         <Link href="/" className="flex items-center gap-2.5 group" aria-label="Sigma Estimations home">
-          <Logo className="h-10 w-10 sm:h-11 sm:w-11" />
-          <span className="font-display text-base sm:text-[16px] font-semibold text-white tracking-tight leading-none">
-            Sigma <span className="text-gold-400">Estimations</span>
-          </span>
+          <Logo className="h-10 w-10 sm:h-15 sm:w-36" />
         </Link>
 
         <nav className="hidden lg:flex items-center gap-1">
@@ -55,15 +51,16 @@ export default function Navbar() {
               <Link
                 key={link.href}
                 href={link.href}
-                className={`relative px-4 py-2 text-sm font-medium transition-colors duration-500 ${
-                  active ? "text-gold-400" : "text-slate-200 hover:text-white"
-                }`}
+                className={`relative px-4 py-2 text-sm font-medium transition-colors duration-500 hover:text-[#004AB7]
+                   ${active ? "text-[#C2C0C1]" : "text-slate-200 hover:text-white"
+                  } ${scrolled ? "text-[#001d49] " : "text-white"
+                  }`}
               >
                 {link.label}
                 {active && (
                   <motion.span
                     layoutId="nav-active"
-                    className="absolute left-4 right-4 -bottom-0.5 h-px bg-gold-400"
+                    className="absolute left-4 right-4 -bottom-0.5 h-px bg-[#05408C]"
                   />
                 )}
               </Link>
@@ -77,9 +74,12 @@ export default function Navbar() {
             className="flex items-center gap-2 text-sm font-medium text-slate-200 hover:text-white transition-colors"
           >
             <Phone className="h-4 w-4 text-gold-400" />
-            +1 (813) 555-0199
+            <p className={`${scrolled ? "text-[#004AB7]" : "text-white "
+              }`}>
+              +1 (813) 555-0199
+            </p>
           </a>
-          <Button href="/contact" variant="primary" className="!py-3">
+          <Button href="/contact" variant="primary" className="!py-3 !text-white !bg-[#004AB7] hover:!bg-[#05408C]">
             Get Free Estimate
           </Button>
         </div>
@@ -107,14 +107,13 @@ export default function Navbar() {
                 <Link
                   key={link.href}
                   href={link.href}
-                  className={`py-3 text-base font-medium border-b border-white/5 ${
-                    pathname === link.href ? "text-gold-400" : "text-slate-200"
-                  }`}
+                  className={`py-3 text-base font-medium border-b border-white/5 ${pathname === link.href ? "text-gold-400" : "text-slate-200"
+                    }`}
                 >
                   {link.label}
                 </Link>
               ))}
-              <Button href="/contact" variant="primary" className="mt-5 w-full justify-center">
+              <Button href="/contact" variant="primary" className="mt-5 w-full justify-center !text-white !bg-[#004AB7] hover:!bg-[#05408C]">
                 Get Free Estimate
               </Button>
             </div>

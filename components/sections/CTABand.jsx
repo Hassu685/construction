@@ -22,7 +22,7 @@ export default function CTABand() {
         </Reveal>
         <Reveal delay={0.24}>
           <div className="mt-9 flex flex-wrap items-center justify-center gap-4">
-            <Button href="/contact" variant="primary">
+            <Button href="/contact" variant="primary" className="!text-white !bg-[#004AB7] hover:!bg-[#05408C]">
               Get Free Estimate
             </Button>
             <Button href="/services" variant="outline">

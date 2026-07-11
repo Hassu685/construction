@@ -125,7 +125,7 @@ body {
 }
 
 .navbar-blur {
-  background: rgba(8, 12, 23, 0.94);
+  background: white;
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   box-shadow: 0 4px 24px -8px rgba(0, 0, 0, 0.35);
