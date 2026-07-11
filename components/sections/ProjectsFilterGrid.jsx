@@ -22,7 +22,7 @@ export default function ProjectsFilterGrid() {
                 key={cat}
                 onClick={() => setActive(cat)}
                 className={`relative px-5 py-2.5 rounded-full text-sm font-medium transition-colors duration-500 ${
-                  active === cat ? "text-navy-900" : "text-slate-500 hover:text-navy-900"
+                  active === cat ? "text-white" : "text-slate-500 hover:text-[#001D49]"
                 }`}
               >
                 {active === cat && (

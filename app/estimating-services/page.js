@@ -82,7 +82,7 @@ export default function EstimatingServicesPage() {
             {estimateTypes.map((type, i) => (
               <Reveal key={type.title} delay={i * 0.08}>
                 <div className="rounded-2xl bg-white border border-navy-900/8 p-8 h-full flex flex-col">
-                  <span className="flex h-12 w-12 items-center justify-center rounded-xl bg-navy-900 text-[#004ab7]">
+                  <span className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#001D49] text-white">
                     <type.icon className="h-5 w-5" />
                   </span>
                   <h3 className="font-display text-lg font-semibold text-navy-900 mt-6">{type.title}</h3>

@@ -58,7 +58,7 @@ export default function AboutPage() {
               title="Numbers your project team can build on."
             />
             <div className="flex gap-4">
-              <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-navy-900 text-[#004ab7]">
+              <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-[#001D49] text-white">
                 <Target className="h-5 w-5" />
               </span>
               <div>
@@ -70,7 +70,7 @@ export default function AboutPage() {
               </div>
             </div>
             <div className="flex gap-4">
-              <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-navy-900 text-[#004ab7]">
+              <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-[#001D49] text-white">
                 <Eye className="h-5 w-5" />
               </span>
               <div>
