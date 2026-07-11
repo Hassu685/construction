@@ -52,7 +52,10 @@ export default function Hero() {
                     initial={{ y: "110%" }}
                     animate={{ y: 0 }}
                     transition={{ duration: 1.1, delay: 0.2 + i * 0.16, ease: [0.22, 1, 0.36, 1] }}
-                    className={`block ${i === 1 ? "text-gold-gradient" : ""}`}
+                    className={`block ${i === 1
+                        ? "text-gradient-to-r from-[#004AB7] via-[#05408C] to-[#05408C]"
+                        : ""
+                      }`}
                   >
                     {line}
                   </motion.span>

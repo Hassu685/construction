@@ -52,8 +52,11 @@ export default function Navbar() {
                 key={link.href}
                 href={link.href}
                 className={`relative px-4 py-2 text-sm font-medium transition-colors duration-500 hover:text-[#004AB7]
-                   ${active ? "text-[#C2C0C1]" : "text-slate-200 hover:text-white"
-                  } ${scrolled ? "text-[#001d49] " : "text-white"
+                  ${!active && !scrolled ? "text-slate-200" : ""}
+                  ${active && !scrolled ? "text-[#C2C0C1]" : ""} 
+                  
+                  ${active && scrolled ? "text-[#001d49]" : ""
+                  } ${!active && scrolled ? "text-[#001d49] " : ""
                   }`}
               >
                 {link.label}
