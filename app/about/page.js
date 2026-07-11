@@ -11,20 +11,20 @@ import { Target, Eye } from "lucide-react";
 export const metadata = {
   title: "About Us",
   description:
-    "Learn about BuildNova Estimating & Construction — our mission, our engineers, and fifteen years of accurate construction estimating.",
+    "Learn about Sigma Estimations — our mission, our engineers, and fifteen years of accurate construction estimating.",
 };
 
 export default function AboutPage() {
   return (
     <>
       <PageHero
-        eyebrow="About BuildNova"
+        eyebrow="About Sigma Estimations"
         title="Estimators and engineers who understand the job site."
         description="Fifteen years of construction estimating, quantity takeoff and project management built for builders who bid to win."
         sliderImages={[
           {
             src: "https://images.unsplash.com/photo-1521790797524-b2497295b8a0?q=80&w=1400&auto=format&fit=crop",
-            alt: "BuildNova engineering team on a construction site",
+            alt: "Sigma Estimations engineering team on a construction site",
           },
           {
             src: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=1400&auto=format&fit=crop",

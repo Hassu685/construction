@@ -4,7 +4,7 @@ import CTABand from "@/components/sections/CTABand";
 
 export const metadata = {
   title: "FAQ",
-  description: "Answers to common questions about BuildNova's construction estimating, quantity takeoff and bid preparation services.",
+  description: "Answers to common questions about Sigma Estimations' construction estimating, quantity takeoff and bid preparation services.",
 };
 
 export default function FAQPage() {
@@ -29,7 +29,7 @@ export default function FAQPage() {
           },
         ]}
       />
-      <FAQAccordion showHeading={false} />
+      <FAQAccordion showCTA={false} />
       <CTABand />
     </>
   );

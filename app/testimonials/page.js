@@ -7,7 +7,7 @@ import { Star } from "lucide-react";
 
 export const metadata = {
   title: "Testimonials",
-  description: "Hear from builders, developers and contractors who rely on BuildNova for accurate construction estimating.",
+  description: "Hear from builders, developers and contractors who rely on Sigma Estimations for accurate construction estimating.",
 };
 
 export default function TestimonialsPage() {

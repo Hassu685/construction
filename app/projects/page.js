@@ -5,7 +5,7 @@ import CTABand from "@/components/sections/CTABand";
 export const metadata = {
   title: "Projects",
   description:
-    "Browse residential, commercial and industrial projects estimated and delivered by BuildNova across the USA, Canada, Australia and the Middle East.",
+    "Browse residential, commercial and industrial projects estimated and delivered by Sigma Estimations across the USA, Canada, Australia and the Middle East.",
 };
 
 export default function ProjectsPage() {

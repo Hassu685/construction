@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import { Compass } from "lucide-react";
+import Logo from "@/components/ui/Logo";
 
 export default function LoadingScreen() {
   const [loading, setLoading] = useState(true);
@@ -26,15 +26,14 @@ export default function LoadingScreen() {
             transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
             className="relative flex flex-col items-center gap-5"
           >
-            <motion.span
-              animate={{ rotate: 360 }}
-              transition={{ duration: 2.4, repeat: Infinity, ease: "linear" }}
-              className="flex h-16 w-16 items-center justify-center rounded-2xl bg-gold-500 text-navy-900"
+            <motion.div
+              animate={{ scale: [1, 1.08, 1] }}
+              transition={{ duration: 1.6, repeat: Infinity, ease: "easeInOut" }}
             >
-              <Compass className="h-8 w-8" strokeWidth={2.2} />
-            </motion.span>
+              <Logo className="h-16 w-16" />
+            </motion.div>
             <div className="font-display text-2xl font-semibold text-white tracking-tight">
-              Build<span className="text-gold-400">Nova</span>
+              Sigma <span className="text-gold-400">Estimations</span>
             </div>
             <div className="relative h-[2px] w-40 bg-white/10 overflow-hidden rounded-full">
               <motion.span

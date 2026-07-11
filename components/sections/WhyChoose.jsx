@@ -10,7 +10,7 @@ export default function WhyChoose() {
     <section className="relative bg-surface py-24 lg:py-32 bg-diagonal">
       <div className="container-px">
         <SectionHeading
-          eyebrow="Why BuildNova"
+          eyebrow="Why Sigma Estimations"
           title="The estimating partner your bid team can rely on."
           description="We built our process around the two things that matter most on a bid deadline: accuracy and speed."
           align="center"

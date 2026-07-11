@@ -4,6 +4,9 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { ArrowRight, PlayCircle } from "lucide-react";
 import Button from "@/components/ui/Button";
+import AnimatedCounter from "@/components/ui/AnimatedCounter";
+import { stats } from "@/lib/data";
+import { getIcon } from "@/lib/icons";
 
 export default function Hero() {
   return (
@@ -29,7 +32,7 @@ export default function Hero() {
       {/* Dimension line ornament */}
       <div className="hidden lg:block absolute top-32 left-16 right-16 dimension-line" />
 
-      <div className="relative container-px w-full pt-28 lg:pt-40 pb-16 lg:pb-24">
+      <div className="relative container-px w-full pt-40 pb-16 lg:pb-24">
         <div className="max-w-4xl">
           <motion.div
             initial={{ opacity: 0, y: 16 }}
@@ -62,7 +65,7 @@ export default function Hero() {
             transition={{ duration: 0.9, delay: 0.75, ease: [0.22, 1, 0.36, 1] }}
             className="mt-7 max-w-xl text-base sm:text-lg text-slate-300 leading-relaxed"
           >
-            BuildNova provides accurate construction estimating, quantity takeoffs and project
+            Sigma Estimations provides accurate construction estimating, quantity takeoffs and project
             management solutions for residential, commercial and industrial developments.
           </motion.p>
 

@@ -52,7 +52,7 @@ export default function CustomCursor() {
       <motion.div
         className="cursor-dot"
         style={{ x: dotX, y: dotY }}
-        animate={{ opacity: visible ? 1 : 0, scale: hovering ? 0 : 1 }}
+        animate={{ opacity: visible ? 1 : 0, scale: 1 }}
         transition={{ duration: 0.25, ease: "easeOut" }}
       />
       <motion.div
@@ -60,9 +60,9 @@ export default function CustomCursor() {
         style={{ x: ringX, y: ringY }}
         animate={{
           opacity: visible ? 1 : 0,
-          scale: hovering ? 1.5 : 1,
-          backgroundColor: hovering ? "rgba(245,158,11,0.12)" : "rgba(245,158,11,0)",
-          borderColor: hovering ? "rgba(245,158,11,0.85)" : "rgba(245,158,11,0.55)",
+          scale: hovering ? 1.4 : 1,
+          backgroundColor: hovering ? "rgba(47,102,222,0.12)" : "rgba(47,102,222,0)",
+          borderColor: hovering ? "rgba(47,102,222,0.85)" : "rgba(47,102,222,0.55)",
         }}
         transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
       />

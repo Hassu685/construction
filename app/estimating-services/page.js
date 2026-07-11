@@ -7,7 +7,7 @@ import { CheckCircle2, FileSpreadsheet, LayoutGrid, ScanLine } from "lucide-reac
 export const metadata = {
   title: "Estimating Services",
   description:
-    "Preliminary, detailed and control estimates delivered by BuildNova's engineering team, using digital takeoff software calibrated to regional pricing.",
+    "Preliminary, detailed and control estimates delivered by Sigma Estimations' engineering team, using digital takeoff software calibrated to regional pricing.",
 };
 
 const estimateTypes = [

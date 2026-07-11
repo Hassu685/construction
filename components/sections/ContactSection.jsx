@@ -47,8 +47,9 @@ export default function ContactSection({ showMap = true, showHeading = true }) {
                 {infoCards.map((card, i) => (
                   <div
                     key={card.title}
-                    className={`flex items-start gap-4 ${i !== 0 ? "pt-5 border-t border-navy-900/8" : ""
-                      }`}
+                    className={`flex items-start gap-4 ${
+                      i !== 0 ? "pt-5 border-t border-navy-900/8" : ""
+                    }`}
                   >
                     <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-navy-900 text-gold-400">
                       <card.icon className="h-5 w-5" />
@@ -178,7 +179,7 @@ export default function ContactSection({ showMap = true, showHeading = true }) {
           <Reveal delay={0.15} className="mt-6">
             <div className="relative rounded-2xl overflow-hidden h-80 sm:h-96 border border-navy-900/8 bg-navy-100">
               <iframe
-                title="BuildNova office location map"
+                title="Sigma Estimations office location map"
                 src="https://www.google.com/maps?q=Tampa%20Florida&output=embed"
                 className="w-full h-full grayscale-[15%]"
                 loading="lazy"

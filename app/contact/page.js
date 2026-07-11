@@ -5,7 +5,7 @@ import Reveal from "@/components/ui/Reveal";
 
 export const metadata = {
   title: "Contact Us",
-  description: "Get in touch with BuildNova Estimating & Construction for a free construction estimate or quantity takeoff quote.",
+  description: "Get in touch with Sigma Estimations for a free construction estimate or quantity takeoff quote.",
 };
 
 export default function ContactPage() {

@@ -4,8 +4,9 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { AnimatePresence, motion } from "framer-motion";
-import { Menu, X, Compass, Phone } from "lucide-react";
+import { Menu, X, Phone } from "lucide-react";
 import Button from "@/components/ui/Button";
+import Logo from "@/components/ui/Logo";
 
 const links = [
   { href: "/", label: "Home" },
@@ -40,12 +41,10 @@ export default function Navbar() {
       }`}
     >
       <div className="container-px flex items-center justify-between">
-        <Link href="/" className="flex items-center gap-2.5 group">
-          <span className="relative flex h-9 w-9 items-center justify-center rounded-md bg-gold-500 text-navy-900">
-            <Compass className="h-5 w-5" strokeWidth={2.4} />
-          </span>
-          <span className="font-display text-lg font-semibold text-white tracking-tight">
-            Build<span className="text-gold-400">Nova</span>
+        <Link href="/" className="flex items-center gap-2.5 group" aria-label="Sigma Estimations home">
+          <Logo className="h-10 w-10 sm:h-11 sm:w-11" />
+          <span className="font-display text-base sm:text-[16px] font-semibold text-white tracking-tight leading-none">
+            Sigma <span className="text-gold-400">Estimations</span>
           </span>
         </Link>
 

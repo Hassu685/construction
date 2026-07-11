@@ -1,4 +1,3 @@
-import { Space_Grotesk, Inter, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
@@ -7,27 +6,6 @@ import LoadingScreen from "@/components/ui/LoadingScreen";
 import CustomCursor from "@/components/ui/CustomCursor";
 import FloatingActions from "@/components/ui/FloatingActions";
 import { siteConfig } from "@/lib/data";
-
-const spaceGrotesk = Space_Grotesk({
-  subsets: ["latin"],
-  weight: ["500", "600", "700"],
-  variable: "--font-space-grotesk",
-  display: "swap",
-});
-
-const inter = Inter({
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
-  variable: "--font-inter",
-  display: "swap",
-});
-
-const jetbrainsMono = JetBrains_Mono({
-  subsets: ["latin"],
-  weight: ["400", "500"],
-  variable: "--font-jetbrains-mono",
-  display: "swap",
-});
 
 export const metadata = {
   metadataBase: new URL(siteConfig.url),
@@ -82,7 +60,7 @@ export default function RootLayout({ children }) {
   };
 
   return (
-    <html lang="en" className={`${spaceGrotesk.variable} ${inter.variable} ${jetbrainsMono.variable}`}>
+    <html lang="en" >
       <body className="bg-surface text-navy-900 antialiased">
         <script
           type="application/ld+json"

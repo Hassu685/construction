@@ -2,7 +2,8 @@
 
 import Link from "next/link";
 import { useState } from "react";
-import { Compass, Facebook, Instagram, Linkedin, Twitter, MapPin, Mail, Phone, ArrowRight } from "lucide-react";
+import { Facebook, Instagram, Linkedin, Twitter, MapPin, Mail, Phone, ArrowRight } from "lucide-react";
+import Logo from "@/components/ui/Logo";
 import { siteConfig, services } from "@/lib/data";
 
 export default function Footer() {
@@ -22,11 +23,9 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 pb-14 border-b border-white/10">
           <div className="lg:col-span-2">
             <Link href="/" className="flex items-center gap-2.5 mb-4">
-              <span className="flex h-9 w-9 items-center justify-center rounded-md bg-gold-500 text-navy-900">
-                <Compass className="h-5 w-5" strokeWidth={2.4} />
-              </span>
+              <Logo className="h-9 w-9" />
               <span className="font-display text-lg font-semibold text-white">
-                Build<span className="text-gold-400">Nova</span>
+                Sigma <span className="text-gold-400">Estimations</span>
               </span>
             </Link>
             <p className="text-sm text-slate-400 leading-relaxed max-w-sm">{siteConfig.description}</p>

@@ -20,7 +20,7 @@ export default function HomePage() {
       <Process />
       <ProjectsPreview />
       <TestimonialsSlider />
-      <FAQAccordion limit={5} />
+      <FAQAccordion limit={5} showCTA={false} />
       <CTABand />
     </>
   );

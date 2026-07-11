@@ -34,9 +34,9 @@ export default function AboutPreview() {
 
         <div>
           <SectionHeading
-            eyebrow="About BuildNova"
+            eyebrow="About Sigma Estimations"
             title="Precision estimating built by people who've worked the job site."
-            description="BuildNova was founded on a simple premise: estimates should be accurate enough to bid on with confidence, and fast enough to keep your team moving. Today we support builders, developers and contractors across four continents."
+            description="Sigma Estimations was founded on a simple premise: estimates should be accurate enough to bid on with confidence, and fast enough to keep your team moving. Today we support builders, developers and contractors across four continents."
             light
           />
 

@@ -6,7 +6,7 @@ import CTABand from "@/components/sections/CTABand";
 export const metadata = {
   title: "Services",
   description:
-    "Explore BuildNova's full range of construction estimating services, from quantity takeoff to project management and bid preparation.",
+    "Explore Sigma Estimations' full range of construction estimating services, from quantity takeoff to project management and bid preparation.",
 };
 
 export default function ServicesPage() {
