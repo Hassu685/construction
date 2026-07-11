@@ -47,14 +47,14 @@ export default function TestimonialsSlider({ compact = false }) {
               >
                 <div className="flex gap-1 mb-6">
                   {Array.from({ length: current.rating }).map((_, i) => (
-                    <Star key={i} className="h-4 w-4 fill-gold-500 text-gold-500" />
+                    <Star key={i} className="h-4 w-4 fill-gold-500 text-[#004ab1]" />
                   ))}
                 </div>
                 <p className="font-display text-xl sm:text-2xl leading-relaxed text-white">
                   "{current.quote}"
                 </p>
                 <div className="mt-8 flex items-center gap-4">
-                  <div className="flex h-12 w-12 items-center justify-center rounded-full bg-gold-500 text-navy-900 font-display font-semibold">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-full bg-[#004ab7] text-white font-display font-semibold">
                     {current.name.split(" ").map((n) => n[0]).join("")}
                   </div>
                   <div>
@@ -84,7 +84,7 @@ export default function TestimonialsSlider({ compact = false }) {
                   }}
                   aria-label={`Go to testimonial ${i + 1}`}
                   className={`h-1.5 rounded-full transition-all duration-500 ${
-                    i === index ? "w-6 bg-gold-500" : "w-1.5 bg-navy-900/20"
+                    i === index ? "w-6 bg-[#004ab7]" : "w-1.5 bg-navy-900/20"
                   }`}
                 />
               ))}

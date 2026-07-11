@@ -25,8 +25,8 @@ export default function Hero() {
       </div>
 
       {/* Floating shapes */}
-      <div className="absolute top-1/4 right-[8%] h-64 w-64 rounded-full bg-gold-500/10 blur-3xl animate-float pointer-events-none" />
-      <div className="absolute bottom-1/3 left-[6%] h-52 w-52 rounded-full bg-gold-500/10 blur-3xl animate-float-delayed pointer-events-none" />
+      <div className="absolute top-1/4 right-[8%] h-64 w-64 rounded-full bg-[#004ab7]/10 blur-3xl animate-float pointer-events-none" />
+      <div className="absolute bottom-1/3 left-[6%] h-52 w-52 rounded-full bg-[#004ab7]/10 blur-3xl animate-float-delayed pointer-events-none" />
 
       {/* Dimension line ornament */}
       <div className="hidden lg:block absolute top-32 left-16 right-16 dimension-line" />
@@ -41,8 +41,8 @@ export default function Hero() {
               transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
               className="flex items-center gap-3 mb-7"
             >
-              <span className="h-px w-10 bg-gold-500" />
-              <span className="eyebrow text-gold-400">Estimating · Takeoff · Construction</span>
+              <span className="h-px w-10 bg-[#004AB7]" />
+              <span className="eyebrow text-[#004AB7]">Estimating · Takeoff · Construction</span>
             </motion.div>
 
             <h1 className="font-display font-semibold text-white leading-[1.04] tracking-tight text-[2.4rem] sm:text-6xl lg:text-[3.8rem]">
@@ -53,7 +53,7 @@ export default function Hero() {
                     animate={{ y: 0 }}
                     transition={{ duration: 1.1, delay: 0.2 + i * 0.16, ease: [0.22, 1, 0.36, 1] }}
                     className={`block ${i === 1
-                        ? "text-gradient-to-r from-[#004AB7] via-[#05408C] to-[#05408C]"
+                        ? "bg-gradient-to-r from-[#004AB7] via-[#05408C] to-[#05408C] bg-clip-text text-transparent"
                         : ""
                       }`}
                   >

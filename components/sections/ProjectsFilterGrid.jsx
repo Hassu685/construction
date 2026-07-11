@@ -28,7 +28,7 @@ export default function ProjectsFilterGrid() {
                 {active === cat && (
                   <motion.span
                     layoutId="filter-pill"
-                    className="absolute inset-0 rounded-full bg-gold-500"
+                    className="absolute inset-0 rounded-full bg-[#004ab7]"
                     transition={{ type: "spring", stiffness: 350, damping: 28 }}
                   />
                 )}

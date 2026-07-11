@@ -79,7 +79,7 @@ export default function HeroImageSlider({ interval = 4500, images = defaultImage
             {i === index && (
               <motion.span
                 layoutId="slider-dot"
-                className="absolute inset-0 bg-gold-500 rounded-full"
+                className="absolute inset-0 bg-[#004ab7] rounded-full"
               />
             )}
           </button>

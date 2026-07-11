@@ -3,12 +3,12 @@ import { ArrowUpRight } from "lucide-react";
 
 const variants = {
   primary:
-    "bg-gold-500 text-navy-900 hover:bg-gold-400 shadow-none hover:shadow-gold-hover",
+    "bg-[#004ab7] text-navy-900 hover:bg-gold-400 shadow-none hover:shadow-gold-hover",
   outline:
     "border border-white/25 text-white hover:bg-white/10 hover:border-white/40 backdrop-blur-sm",
   outlineDark:
     "border border-navy-900/15 text-navy-900 hover:bg-navy-900 hover:text-white",
-  ghost: "text-navy-900 hover:text-gold-600",
+  ghost: "text-navy-900 hover:text-[#004ab7]",
 };
 
 export default function Button({

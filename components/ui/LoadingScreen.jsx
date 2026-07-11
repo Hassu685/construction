@@ -33,7 +33,7 @@ export default function LoadingScreen() {
               <Logo className="h-16 w-16" />
             </motion.div>
             <div className="font-display text-2xl font-semibold text-white tracking-tight">
-              Sigma <span className="text-gold-400">Estimations</span>
+              Sigma <span className="text-[#004ab7]">Estimations</span>
             </div>
             <div className="relative h-[2px] w-40 bg-white/10 overflow-hidden rounded-full">
               <motion.span

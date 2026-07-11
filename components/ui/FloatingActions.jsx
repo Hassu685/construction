@@ -39,9 +39,9 @@ export default function FloatingActions() {
             onClick={scrollToTop}
             aria-label="Back to top"
             data-cursor-hover
-            className="flex h-11 w-11 items-center justify-center rounded-full bg-navy-900 text-gold-400 border border-white/10 shadow-premium hover:bg-navy-800 hover:-translate-y-1 transition-all duration-500 ease-out"
+            className="flex h-14 w-14 items-center justify-center rounded-full bg-navy-900 text-[#004ab7] border border-white/10 shadow-premium hover:bg-navy-800 hover:-translate-y-1 transition-all duration-500 ease-out"
           >
-            <ArrowUp className="h-[18px] w-[18px]" />
+            <ArrowUp className="h-[18px] w-[18px] hover:-translate-y-1 duration-200" />
           </motion.button>
         )}
       </AnimatePresence>

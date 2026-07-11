@@ -33,10 +33,10 @@ export default function Process() {
                   transition={{ duration: 0.6, delay: i * 0.1, ease: [0.16, 1, 0.3, 1] }}
                   className="relative flex flex-col"
                 >
-                  <div className="relative z-10 flex h-[52px] w-[52px] items-center justify-center rounded-full bg-navy-900 border border-gold-500/50 text-gold-400">
+                  <div className="relative z-10 flex h-[52px] w-[52px] items-center justify-center rounded-full bg-navy-900 border border-gold-500/50 text-[#004ab7]">
                     <Icon className="h-5 w-5" strokeWidth={1.8} />
                   </div>
-                  <span className="tick-number text-gold-500/70 text-xs mt-4">{step.number}</span>
+                  <span className="tick-number text-[#004ab1]/70 text-xs mt-4">{step.number}</span>
                   <h3 className="font-display text-white text-base font-semibold mt-1.5">{step.title}</h3>
                   <p className="text-sm text-slate-400 mt-2 leading-relaxed">{step.description}</p>
                 </motion.div>

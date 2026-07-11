@@ -23,10 +23,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 pb-14 border-b border-white/10">
           <div className="lg:col-span-2">
             <Link href="/" className="flex items-center gap-2.5 mb-4">
-              <Logo className="h-9 w-9" />
-              <span className="font-display text-lg font-semibold text-white">
-                Sigma <span className="text-gold-400">Estimations</span>
-              </span>
+              <Logo className="h-20 w-32" />
             </Link>
             <p className="text-sm text-slate-400 leading-relaxed max-w-sm">{siteConfig.description}</p>
             <div className="flex items-center gap-3 mt-6">
@@ -39,7 +36,7 @@ export default function Footer() {
                 <a
                   key={i}
                   href={href}
-                  className="flex h-9 w-9 items-center justify-center rounded-full border border-white/15 text-slate-300 hover:border-gold-500 hover:text-gold-400 transition-colors"
+                  className="flex h-9 w-9 items-center justify-center rounded-full border border-white/15 text-slate-300 hover:border-gold-500 hover:text-[#004ab7] transition-colors"
                   aria-label="Social link"
                 >
                   <Icon className="h-4 w-4" />
@@ -60,7 +57,7 @@ export default function Footer() {
                 ["Contact Us", "/contact"],
               ].map(([label, href]) => (
                 <li key={href}>
-                  <Link href={href} className="text-slate-400 hover:text-gold-400 transition-colors">
+                  <Link href={href} className="text-slate-400 hover:text-[#004ab7] transition-colors">
                     {label}
                   </Link>
                 </li>
@@ -73,7 +70,7 @@ export default function Footer() {
             <ul className="space-y-3 text-sm">
               {services.slice(0, 6).map((s) => (
                 <li key={s.slug}>
-                  <Link href={`/services#${s.slug}`} className="text-slate-400 hover:text-gold-400 transition-colors">
+                  <Link href={`/services#${s.slug}`} className="text-slate-400 hover:text-[#004ab7] transition-colors">
                     {s.title}
                   </Link>
                 </li>
@@ -85,15 +82,15 @@ export default function Footer() {
             <h4 className="text-white font-semibold text-sm tracking-wide mb-5">Contact</h4>
             <ul className="space-y-4 text-sm text-slate-400">
               <li className="flex gap-3">
-                <MapPin className="h-4 w-4 text-gold-400 shrink-0 mt-0.5" />
+                <MapPin className="h-4 w-4 text-[#004ab7] shrink-0 mt-0.5" />
                 <span>{siteConfig.address}</span>
               </li>
               <li className="flex gap-3">
-                <Phone className="h-4 w-4 text-gold-400 shrink-0 mt-0.5" />
+                <Phone className="h-4 w-4 text-[#004ab7] shrink-0 mt-0.5" />
                 <span>{siteConfig.phone}</span>
               </li>
               <li className="flex gap-3">
-                <Mail className="h-4 w-4 text-gold-400 shrink-0 mt-0.5" />
+                <Mail className="h-4 w-4 text-[#004ab7] shrink-0 mt-0.5" />
                 <span>{siteConfig.email}</span>
               </li>
             </ul>
@@ -103,8 +100,8 @@ export default function Footer() {
         <div className="flex flex-col sm:flex-row items-center justify-between gap-4 pt-8 text-xs text-slate-500">
           <p>© {new Date().getFullYear()} {siteConfig.name}. All rights reserved.</p>
           <div className="flex gap-6">
-            <Link href="/" className="hover:text-gold-400 transition-colors">Privacy Policy</Link>
-            <Link href="/" className="hover:text-gold-400 transition-colors">Terms of Service</Link>
+            <Link href="/" className="hover:text-[#004ab7] transition-colors">Privacy Policy</Link>
+            <Link href="/" className="hover:text-[#004ab7] transition-colors">Terms of Service</Link>
           </div>
         </div>
       </div>

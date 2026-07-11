@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, useCallback, useRef } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { AnimatePresence, motion } from "framer-motion";
@@ -22,13 +22,29 @@ export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
   const pathname = usePathname();
+  const rafId = useRef(null);
+
+  const handleScroll = useCallback(() => {
+    if (rafId.current) return; // throttle to one check per frame
+    rafId.current = requestAnimationFrame(() => {
+      setScrolled((prev) => {
+        // hysteresis: different thresholds for entering vs exiting
+        // stops the state flip-flopping when scrollY hovers near the edge
+        if (prev) return window.scrollY > 16; // stay "scrolled" until below 16
+        return window.scrollY > 32; // only become "scrolled" past 32
+      });
+      rafId.current = null;
+    });
+  }, []);
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 24);
-    onScroll();
-    window.addEventListener("scroll", onScroll);
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
+    handleScroll();
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      if (rafId.current) cancelAnimationFrame(rafId.current);
+    };
+  }, [handleScroll]);
 
   useEffect(() => {
     setOpen(false);
@@ -36,8 +52,11 @@ export default function Navbar() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${scrolled ? "navbar-blur border-b border-white/10 py-3" : "bg-transparent py-5"
-        }`}
+      className={`fixed top-0 left-0 right-0 z-50 py-4 border-b transition-[background-color,border-color,box-shadow] duration-500 ${
+        scrolled
+          ? "navbar-blur border-white/10"
+          : "bg-transparent border-transparent"
+      }`}
     >
       <div className="container-px flex items-center justify-between">
         <Link href="/" className="flex items-center gap-2.5 group" aria-label="Sigma Estimations home">
@@ -76,7 +95,8 @@ export default function Navbar() {
             href="tel:+18135550199"
             className="flex items-center gap-2 text-sm font-medium text-slate-200 hover:text-white transition-colors"
           >
-            <Phone className="h-4 w-4 text-gold-400" />
+            <Phone className={`h-4 w-4 ${scrolled ? "text-[#004AB7]" : "text-white "
+              }`} />
             <p className={`${scrolled ? "text-[#004AB7]" : "text-white "
               }`}>
               +1 (813) 555-0199
@@ -88,7 +108,8 @@ export default function Navbar() {
         </div>
 
         <button
-          className="lg:hidden text-white p-2"
+          className={`lg:hidden p-2 ${
+            scrolled?"text-black":"text-white"}`}
           onClick={() => setOpen((o) => !o)}
           aria-label="Toggle navigation menu"
         >
@@ -110,7 +131,7 @@ export default function Navbar() {
                 <Link
                   key={link.href}
                   href={link.href}
-                  className={`py-3 text-base font-medium border-b border-white/5 ${pathname === link.href ? "text-gold-400" : "text-slate-200"
+                  className={`py-3 text-base font-medium border-b border-white/5 ${pathname === link.href ? "text-[#004ab7]" : ""
                     }`}
                 >
                   {link.label}

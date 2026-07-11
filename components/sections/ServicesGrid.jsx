@@ -34,14 +34,14 @@ export default function ServicesGrid({ limit }) {
                 transition={{ duration: 0.8, delay: (i % 3) * 0.1, ease: [0.22, 1, 0.36, 1] }}
                 className="group relative rounded-2xl border border-navy-900/8 bg-white p-7 lift-hover shadow-sm hover:shadow-premium"
               >
-                <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-navy-900 text-gold-400 group-hover:bg-gold-500 group-hover:text-navy-900 transition-colors duration-500">
+                <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#001D49] text-white group-hover:bg-[#004AB7] group-hover:text-white transition-colors duration-500">
                   <Icon className="h-5 w-5" strokeWidth={2} />
                 </div>
                 <h3 className="mt-6 font-display text-lg font-semibold text-navy-900">{service.title}</h3>
                 <p className="mt-2.5 text-sm text-slate-600 leading-relaxed">{service.short}</p>
                 <Link
                   href={`/services#${service.slug}`}
-                  className="mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-navy-900 group-hover:text-gold-600 transition-colors"
+                  className="mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-navy-900 group-hover:text-[#004AB7] transition-colors"
                 >
                   Learn more
                   <ArrowUpRight className="h-3.5 w-3.5 transition-transform duration-500 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />

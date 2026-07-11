@@ -43,13 +43,13 @@ export default async function ProjectDetailPage({ params }) {
         <div className="container-px relative pb-10">
           <Link
             href="/projects"
-            className="inline-flex items-center gap-2 text-sm text-slate-300 hover:text-gold-400 transition-colors mb-8"
+            className="inline-flex items-center gap-2 text-sm text-slate-300 hover:text-[#004ab7] transition-colors mb-8"
           >
             <ArrowLeft className="h-4 w-4" />
             Back to Projects
           </Link>
           <Reveal>
-            <span className="eyebrow text-gold-400">{project.category}</span>
+            <span className="eyebrow text-[#004ab7]">{project.category}</span>
           </Reveal>
           <Reveal delay={0.08}>
             <h1 className="font-display font-semibold text-white text-4xl sm:text-5xl mt-4 leading-[1.1]">
@@ -87,7 +87,7 @@ export default async function ProjectDetailPage({ params }) {
                   "Ongoing budget tracking through construction",
                 ].map((item) => (
                   <div key={item} className="flex items-start gap-3 rounded-xl bg-white border border-navy-900/8 p-4">
-                    <span className="h-1.5 w-1.5 rounded-full bg-gold-500 mt-2 shrink-0" />
+                    <span className="h-1.5 w-1.5 rounded-full bg-[#004ab7] mt-2 shrink-0" />
                     <span className="text-sm text-slate-700">{item}</span>
                   </div>
                 ))}
@@ -101,7 +101,7 @@ export default async function ProjectDetailPage({ params }) {
               <div className="flex flex-col gap-5">
                 {facts.map((fact) => (
                   <div key={fact.label} className="flex items-start gap-3">
-                    <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-white/5 text-gold-400">
+                    <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-white/5 text-[#004ab7]">
                       <fact.icon className="h-4 w-4" />
                     </span>
                     <div>

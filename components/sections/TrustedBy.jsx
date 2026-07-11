@@ -20,8 +20,8 @@ export default function TrustedBy() {
                 key={`${company.name}-${i}`}
                 className="flex items-center gap-3 px-10 shrink-0 grayscale opacity-50 hover:opacity-100 hover:grayscale-0 transition-all duration-500"
               >
-                <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-white/5 border border-white/10 text-gold-400">
-                  <Icon className="h-4 w-4" strokeWidth={1.8} />
+                <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-white/5 border border-white text-[#004ab7]">
+                  <Icon className="h-4 w-4 text-white" strokeWidth={1.8} />
                 </span>
                 <span className="font-display text-xl sm:text-2xl font-semibold text-slate-300 whitespace-nowrap">
                   {company.name}

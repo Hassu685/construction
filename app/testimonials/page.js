@@ -41,7 +41,7 @@ export default function TestimonialsPage() {
               <div className="rounded-2xl glass p-7 h-full flex flex-col">
                 <div className="flex gap-1 mb-4">
                   {Array.from({ length: t.rating }).map((_, idx) => (
-                    <Star key={idx} className="h-3.5 w-3.5 fill-gold-500 text-gold-500" />
+                    <Star key={idx} className="h-3.5 w-3.5 fill-gold-500 text-[#004ab1]" />
                   ))}
                 </div>
                 <p className="text-slate-200 text-sm leading-relaxed flex-1">"{t.quote}"</p>

@@ -82,16 +82,16 @@ export default function EstimatingServicesPage() {
             {estimateTypes.map((type, i) => (
               <Reveal key={type.title} delay={i * 0.08}>
                 <div className="rounded-2xl bg-white border border-navy-900/8 p-8 h-full flex flex-col">
-                  <span className="flex h-12 w-12 items-center justify-center rounded-xl bg-navy-900 text-gold-400">
+                  <span className="flex h-12 w-12 items-center justify-center rounded-xl bg-navy-900 text-[#004ab7]">
                     <type.icon className="h-5 w-5" />
                   </span>
                   <h3 className="font-display text-lg font-semibold text-navy-900 mt-6">{type.title}</h3>
-                  <span className="eyebrow text-gold-600 mt-2">{type.accuracy}</span>
+                  <span className="eyebrow text-[#004ab7] mt-2">{type.accuracy}</span>
                   <p className="text-sm text-slate-600 mt-4 leading-relaxed">{type.description}</p>
                   <ul className="mt-6 flex flex-col gap-2.5">
                     {type.deliverables.map((d) => (
                       <li key={d} className="flex items-start gap-2.5 text-sm text-slate-700">
-                        <CheckCircle2 className="h-4 w-4 text-gold-500 shrink-0 mt-0.5" />
+                        <CheckCircle2 className="h-4 w-4 text-[#004ab1] shrink-0 mt-0.5" />
                         {d}
                       </li>
                     ))}
@@ -116,7 +116,7 @@ export default function EstimatingServicesPage() {
             {tools.map((tool, i) => (
               <Reveal key={tool} delay={i * 0.06}>
                 <div className="flex items-center gap-3 rounded-xl glass px-5 py-4">
-                  <span className="h-1.5 w-1.5 rounded-full bg-gold-500 shrink-0" />
+                  <span className="h-1.5 w-1.5 rounded-full bg-[#004ab7] shrink-0" />
                   <span className="text-sm text-slate-200">{tool}</span>
                 </div>
               </Reveal>

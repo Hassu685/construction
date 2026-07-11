@@ -6,14 +6,14 @@ export default function PageHero({ eyebrow, title, description, sliderImages }) 
     <section className="relative bg-navy-950 pt-40 pb-24 lg:pt-48 lg:pb-28 overflow-hidden">
       <div className="absolute inset-0 bg-blueprint opacity-30" />
       <div className="absolute inset-0 bg-gradient-to-b from-navy-950/40 via-navy-950/70 to-navy-950" />
-      <div className="absolute top-1/3 right-[10%] h-56 w-56 rounded-full bg-gold-500/10 blur-3xl animate-float pointer-events-none" />
+      <div className="absolute top-1/3 right-[10%] h-56 w-56 rounded-full bg-[#004ab7]/10 blur-3xl animate-float pointer-events-none" />
 
       <div className="container-px relative grid lg:grid-cols-[1.05fr_0.95fr] gap-12 lg:gap-10 items-center">
         <div className="max-w-2xl">
           <Reveal>
             <div className="flex items-center gap-3 mb-5">
-              <span className="h-px w-8 bg-gold-500" />
-              <span className="eyebrow text-gold-400">{eyebrow}</span>
+              <span className="h-px w-8 bg-[#004ab7]" />
+              <span className="eyebrow text-[#004ab7]">{eyebrow}</span>
             </div>
           </Reveal>
           <Reveal delay={0.08}>

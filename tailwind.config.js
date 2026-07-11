@@ -25,7 +25,7 @@ module.exports = {
           DEFAULT: "#1E293B",
         },
         // NOTE: key kept as "gold" for backwards compatibility with existing
-        // class names (bg-gold-500, text-gold-400, shadow-gold, etc.) across
+        // class names (bg-[#004ab7], text-[#004ab7], shadow-gold, etc.) across
         // the codebase — values below are the Sigma Estimations brand blue.
         gold: {
           DEFAULT: "#2F66DE",

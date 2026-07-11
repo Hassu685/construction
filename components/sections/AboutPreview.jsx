@@ -45,7 +45,7 @@ export default function AboutPreview() {
               const Icon = getIcon(item.icon);
               return (
                 <div key={item.label} className="flex items-start gap-3">
-                  <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-white/5 border border-white/10 text-gold-400">
+                  <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-white/5 border border-white/10 text-[#004AB7]">
                     <Icon className="h-[18px] w-[18px]" />
                   </span>
                   <div>

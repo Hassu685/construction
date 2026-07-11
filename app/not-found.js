@@ -10,7 +10,7 @@ export default function NotFound() {
         <div className="inline-flex mb-8">
           <Logo className="h-16 w-16" />
         </div>
-        <div className="eyebrow text-gold-400 mb-4">Error 404</div>
+        <div className="eyebrow text-[#004ab7] mb-4">Error 404</div>
         <h1 className="font-display text-3xl sm:text-4xl font-semibold text-white leading-tight">
           This page hasn't been surveyed yet.
         </h1>

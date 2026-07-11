@@ -58,7 +58,7 @@ export default function AboutPage() {
               title="Numbers your project team can build on."
             />
             <div className="flex gap-4">
-              <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-navy-900 text-gold-400">
+              <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-navy-900 text-[#004ab7]">
                 <Target className="h-5 w-5" />
               </span>
               <div>
@@ -70,7 +70,7 @@ export default function AboutPage() {
               </div>
             </div>
             <div className="flex gap-4">
-              <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-navy-900 text-gold-400">
+              <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-navy-900 text-[#004ab7]">
                 <Eye className="h-5 w-5" />
               </span>
               <div>
@@ -114,8 +114,8 @@ export default function AboutPage() {
             <div className="flex flex-col gap-10">
               {timeline.map((item, i) => (
                 <Reveal key={item.year} delay={i * 0.05} className="relative pl-10">
-                  <span className="absolute left-0 top-1.5 h-3.5 w-3.5 rounded-full bg-gold-500 ring-4 ring-gold-500/20" />
-                  <span className="tick-number text-gold-600 text-sm font-semibold">{item.year}</span>
+                  <span className="absolute left-0 top-1.5 h-3.5 w-3.5 rounded-full bg-[#004ab7] ring-4 ring-gold-500/20" />
+                  <span className="tick-number text-[#004ab7] text-sm font-semibold">{item.year}</span>
                   <h3 className="font-display font-semibold text-navy-900 text-lg mt-1">{item.title}</h3>
                   <p className="text-slate-600 text-sm mt-1.5 leading-relaxed">{item.description}</p>
                 </Reveal>

@@ -15,8 +15,8 @@ export default function SectionHeading({
       {eyebrow && (
         <Reveal>
           <div className="flex items-center gap-3">
-            <span className="h-px w-8 bg-gold-500" />
-            <span className={`eyebrow ${light ? "text-gold-400" : "text-gold-600"}`}>{eyebrow}</span>
+            <span className="h-px w-8 bg-[#004ab7]" />
+            <span className={`eyebrow ${light ? "text-[#004AB7]" : "text-[#004ab7]"}`}>{eyebrow}</span>
           </div>
         </Reveal>
       )}
