@@ -51,7 +51,7 @@ export default function ContactSection({ showMap = true, showHeading = true }) {
                       i !== 0 ? "pt-5 border-t border-navy-900/8" : ""
                     }`}
                   >
-                    <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-navy-900 text-[#004ab7]">
+                    <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-[#001D49] text-white">
                       <card.icon className="h-5 w-5" />
                     </span>
                     <div>
@@ -162,7 +162,7 @@ export default function ContactSection({ showMap = true, showHeading = true }) {
                   <div className="sm:col-span-2">
                     <button
                       type="submit"
-                      className="group w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-full bg-[#004ab7] text-navy-900 px-8 py-4 text-sm font-semibold hover:bg-gold-400 transition-colors shadow-gold"
+                      className="group w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-full bg-[#05408C] text-white px-8 py-4 text-sm font-semibold hover:bg-[#004AB7] transition-colors shadow-gold"
                     >
                       Submit Request
                       <Send className="h-4 w-4 transition-transform duration-500 group-hover:translate-x-1" />
