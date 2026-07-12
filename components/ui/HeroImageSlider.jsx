@@ -38,7 +38,7 @@ export default function HeroImageSlider({ interval = 4500, images = defaultImage
   }, [interval, images.length]);
 
   return (
-    <div className="relative w-full h-full rounded-[2rem] overflow-hidden corner-brackets">
+    <div className="relative w-full h-full rounded-[2rem] overflow-hidden ">
       <AnimatePresence mode="sync">
         <motion.div
           key={index}

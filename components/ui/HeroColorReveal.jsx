@@ -22,7 +22,7 @@ export default function HeroColorReveal() {
       onMouseEnter={() => setActive(true)}
       onMouseLeave={() => setActive(false)}
       data-cursor-hover
-      className="relative w-full h-full rounded-[2rem] overflow-hidden corner-brackets"
+      className="relative w-full h-full rounded-[2rem] overflow-hidden "
     >
       {/* Grayscale base image — always visible */}
       <Image

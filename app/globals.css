@@ -73,11 +73,11 @@ body {
 }
 
 /* Surveyor corner brackets, used on cards / images */
-.corner-brackets {
+. {
   position: relative;
 }
-.corner-brackets::before,
-.corner-brackets::after {
+.::before,
+.::after {
   content: "";
   position: absolute;
   width: 18px;
@@ -87,24 +87,24 @@ body {
   transition: opacity 0.5s ease, transform 0.5s ease;
   z-index: 10;
 }
-.corner-brackets::before {
+.::before {
   top: 10px;
   left: 10px;
   border-top: 2px solid;
   border-left: 2px solid;
   transform: translate(4px, 4px);
 }
-.corner-brackets::after {
+.::after {
   bottom: 10px;
   right: 10px;
   border-bottom: 2px solid;
   border-right: 2px solid;
   transform: translate(-4px, -4px);
 }
-.corner-brackets:hover::before,
-.corner-brackets:hover::after,
-.corner-brackets:focus-within::before,
-.corner-brackets:focus-within::after {
+.:hover::before,
+.:hover::after,
+.:focus-within::before,
+.:focus-within::after {
   opacity: 1;
   transform: translate(0, 0);
 }

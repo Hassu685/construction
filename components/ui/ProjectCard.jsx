@@ -7,7 +7,7 @@ export default function ProjectCard({ project, priority = false }) {
   return (
     <Link
       href={`/projects/${project.slug}`}
-      className="group relative flex flex-col rounded-2xl overflow-hidden bg-navy-900 corner-brackets shadow-sm hover:shadow-premium transition-shadow duration-500"
+      className="group relative flex flex-col rounded-2xl overflow-hidden bg-navy-900  shadow-sm hover:shadow-premium transition-shadow duration-500"
     >
       <div className="relative aspect-[4/3] overflow-hidden">
         <Image
