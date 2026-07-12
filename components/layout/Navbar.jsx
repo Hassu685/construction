@@ -52,7 +52,7 @@ export default function Navbar() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 py-4 border-b transition-[background-color,border-color,box-shadow] duration-500 ${
+      className={`fixed top-0 left-0 right-0 z-50 py-2 border-b transition-[background-color,border-color,box-shadow] duration-500 ${
         scrolled
           ? "navbar-blur border-white/10"
           : "bg-transparent border-transparent"
@@ -60,7 +60,7 @@ export default function Navbar() {
     >
       <div className="container-px flex items-center justify-between">
         <Link href="/" className="flex items-center gap-2.5 group" aria-label="Sigma Estimations home">
-          <Logo className="h-10 w-10 sm:h-15 sm:w-36" />
+          <Logo className="h-14 w-14 sm:h-16 sm:w-16" variant={scrolled ? "color" : "white"} />
         </Link>
 
         <nav className="hidden lg:flex items-center gap-1">

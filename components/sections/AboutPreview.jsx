@@ -46,7 +46,7 @@ export default function AboutPreview() {
               return (
                 <div key={item.label} className="flex items-start gap-3">
                   <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-white/5 border border-white/10 text-[#004AB7]">
-                    <Icon className="h-[18px] w-[18px]" />
+                    <Icon className="h-8 w-8" strokeWidth={1.8} />
                   </span>
                   <div>
                     <div className="font-display text-xl font-semibold text-white">{item.value}</div>

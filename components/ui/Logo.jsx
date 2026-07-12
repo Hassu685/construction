@@ -1,14 +1,19 @@
 import Image from "next/image";
 
-export default function Logo({ className = "h-9 w-9" }) {
+const sources = {
+  color: "/logo-mark-color.png",
+  white: "/logo-mark-white.png",
+};
+
+export default function Logo({ className = "h-9 w-9", variant = "color" }) {
   return (
     <span className={`relative shrink-0 inline-block ${className}`}>
       <Image
-        src="/logo-mark.jpeg"
+        src={sources[variant] || sources.color}
         alt="Sigma Estimations logo"
         fill
         className="object-contain"
-        sizes="64px"
+        sizes="200px"
         priority
       />
     </span>
