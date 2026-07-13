@@ -23,7 +23,7 @@ export default function AboutPreview() {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-navy-950/60 via-transparent to-transparent" />
             </div>
-            <div className="absolute -bottom-6 -right-6 hidden sm:block glass rounded-2xl p-6 w-56">
+            <div className="absolute -bottom-2 -right-6 hidden sm:block glass rounded-2xl p-6 w-56">
               <div className="font-display text-3xl font-semibold text-white tick-number">
                 <AnimatedCounter value={15} suffix="+" />
               </div>

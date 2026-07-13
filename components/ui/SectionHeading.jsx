@@ -25,7 +25,7 @@ export default function SectionHeading({
         <Reveal delay={0.08}>
           <h2
             style={{ lineHeight: 1.2 }}
-            className={`font-display font-semibold text-3xl sm:text-4xl lg:text-[2.75rem] tracking-normal ${light ? "text-white" : "text-navy-900"
+            className={`font-display font-semibold text-3xl sm:text-4xl lg:text-[2.50rem] tracking-normal ${light ? "text-white" : "text-navy-900"
               }`}
           >
             {title}
@@ -34,7 +34,7 @@ export default function SectionHeading({
       )}
       {description && (
         <Reveal delay={0.16}>
-          <p className={`text-base sm:text-lg leading-relaxed ${light ? "text-slate-300" : "text-slate-600"}`}>
+          <p className={`text-base sm:text-base leading-relaxed ${light ? "text-slate-300" : "text-slate-600"}`}>
             {description}
           </p>
         </Reveal>
