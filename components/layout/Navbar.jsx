@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState, useCallback, useRef } from "react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { AnimatePresence, motion } from "framer-motion";
@@ -19,48 +19,18 @@ const links = [
 ];
 
 export default function Navbar() {
-  const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
   const pathname = usePathname();
-  const rafId = useRef(null);
-
-  const handleScroll = useCallback(() => {
-    if (rafId.current) return; // throttle to one check per frame
-    rafId.current = requestAnimationFrame(() => {
-      setScrolled((prev) => {
-        // hysteresis: different thresholds for entering vs exiting
-        // stops the state flip-flopping when scrollY hovers near the edge
-        if (prev) return window.scrollY > 16; // stay "scrolled" until below 16
-        return window.scrollY > 32; // only become "scrolled" past 32
-      });
-      rafId.current = null;
-    });
-  }, []);
-
-  useEffect(() => {
-    handleScroll();
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-      if (rafId.current) cancelAnimationFrame(rafId.current);
-    };
-  }, [handleScroll]);
 
   useEffect(() => {
     setOpen(false);
   }, [pathname]);
 
   return (
-    <header
-      className={`fixed top-0 left-0 right-0 z-50 py-2 border-b transition-[background-color,border-color,box-shadow] duration-500 ${
-        scrolled
-          ? "navbar-blur border-white/10"
-          : "bg-transparent border-transparent"
-      }`}
-    >
+    <header className="fixed top-0 left-0 right-0 z-50 py-1 border-b border-white/10 bg-white shadow-sm">
       <div className="container-px flex items-center justify-between">
         <Link href="/" className="flex items-center gap-2.5 group" aria-label="Sigma Estimations home">
-          <Logo className="h-14 w-14 sm:h-16 sm:w-16" variant={scrolled ? "color" : "white"} />
+          <Logo className="h-14 w-14 sm:h-16 sm:w-16" variant="color" />
         </Link>
 
         <nav className="hidden lg:flex items-center gap-1">
@@ -70,13 +40,7 @@ export default function Navbar() {
               <Link
                 key={link.href}
                 href={link.href}
-                className={`relative px-4 py-2 text-sm font-medium transition-colors duration-500 hover:text-[#004AB7]
-                  ${!active && !scrolled ? "text-slate-200" : ""}
-                  ${active && !scrolled ? "text-[#C2C0C1]" : ""} 
-                  
-                  ${active && scrolled ? "text-[#001d49]" : ""
-                  } ${!active && scrolled ? "text-[#001d49] " : ""
-                  }`}
+                className={`relative px-4 py-2 text-sm font-medium transition-colors duration-500 hover:text-[#004AB7] text-[#001d49]`}
               >
                 {link.label}
                 {active && (
@@ -93,14 +57,10 @@ export default function Navbar() {
         <div className="hidden lg:flex items-center gap-4">
           <a
             href="tel:+18135550199"
-            className="flex items-center gap-2 text-sm font-medium text-slate-200 hover:text-white transition-colors"
+            className="flex items-center gap-2 text-sm font-medium text-[#004AB7] hover:text-[#05408C] transition-colors"
           >
-            <Phone className={`h-4 w-4 ${scrolled ? "text-[#004AB7]" : "text-white "
-              }`} />
-            <p className={`${scrolled ? "text-[#004AB7]" : "text-white "
-              }`}>
-              +1 (813) 555-0199
-            </p>
+            <Phone className="h-4 w-4 text-[#004AB7]" />
+            <p>+1 (813) 555-0199</p>
           </a>
           <Button href="/contact" variant="primary" className="!py-3 !text-white !bg-[#004AB7] hover:!bg-[#05408C]">
             Get Free Estimate
@@ -108,8 +68,7 @@ export default function Navbar() {
         </div>
 
         <button
-          className={`lg:hidden p-2 ${
-            scrolled?"text-black":"text-white"}`}
+          className="lg:hidden p-2 text-black"
           onClick={() => setOpen((o) => !o)}
           aria-label="Toggle navigation menu"
         >
@@ -124,15 +83,16 @@ export default function Navbar() {
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
-            className="lg:hidden overflow-hidden navbar-blur border-t border-white/10 mt-3"
+            className="lg:hidden overflow-hidden bg-white border-t border-black/5 mt-3"
           >
             <div className="container-px py-6 flex flex-col gap-1">
               {links.map((link) => (
                 <Link
                   key={link.href}
                   href={link.href}
-                  className={`py-3 text-base font-medium border-b border-white/5 ${pathname === link.href ? "text-[#004ab7]" : ""
-                    }`}
+                  className={`py-3 text-base font-medium border-b border-black/5 text-[#001d49] ${
+                    pathname === link.href ? "text-[#004ab7]" : ""
+                  }`}
                 >
                   {link.label}
                 </Link>

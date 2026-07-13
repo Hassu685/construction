@@ -27,10 +27,10 @@ export default function WhyChoose() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.3 }}
                 transition={{ duration: 0.6, delay: (i % 3) * 0.1, ease: [0.16, 1, 0.3, 1] }}
-                className="relative rounded-2xl bg-white border border-navy-900/8 p-8 text-center flex flex-col items-center lift-hover hover:border-gold-500/40"
+                className="group relative rounded-2xl bg-white border border-navy-900/8 p-8 text-center flex flex-col items-center lift-hover hover:border-gold-500/40"
               >
-                <span className="flex h-14 w-14 items-center justify-center rounded-2xl bg-navy-900/5 text-navy-900">
-                  <Icon className="h-6 w-6" strokeWidth={1.8} />
+                <span className="flex h-14 w-14 items-center justify-center rounded-2xl bg-navy-900/5 text-navy-900 transition-all duration-500 ease-out group-hover:bg-gold-500/15 group-hover:text-gold-500 group-hover:-translate-y-1 group-hover:rotate-6 group-hover:scale-110">
+                  <Icon className="h-6 w-6 transition-transform duration-500 ease-out" strokeWidth={1.8} />
                 </span>
                 <h3 className="mt-6 font-display text-lg font-semibold text-navy-900">{item.title}</h3>
                 <p className="mt-2 text-sm text-slate-600 leading-relaxed">{item.description}</p>

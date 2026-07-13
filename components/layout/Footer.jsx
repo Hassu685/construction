@@ -99,9 +99,13 @@ export default function Footer() {
 
         <div className="flex flex-col sm:flex-row items-center justify-between gap-4 pt-8 text-xs text-slate-500">
           <p>© {new Date().getFullYear()} {siteConfig.name}. All rights reserved.</p>
-          <div className="flex gap-6">
+          <div>
+            <p>
+              Crafted by the Revamp 180° team.</p>
+          </div>
+          <div className="flex gap-4">
             <Link href="/" className="hover:text-[#004ab7] transition-colors">Privacy Policy</Link>
-            <Link href="/" className="hover:text-[#004ab7] transition-colors">Terms of Service</Link>
+            <Link href="/" className="hover:text-[#004ab7] transition-colors mr-7">Terms of Service</Link>
           </div>
         </div>
       </div>

@@ -45,9 +45,9 @@ export default function Hero() {
               <span className="eyebrow text-[#004AB7]">Estimating · Takeoff · Construction</span>
             </motion.div>
 
-            <h1 className="font-display font-semibold text-white leading-[1.04] tracking-tight text-[2.4rem] sm:text-6xl lg:text-[3.8rem]">
+            <h1 className="font-display font-semibold text-white leading-[1.1] tracking-tight text-[2.4rem] sm:text-6xl lg:text-[3.8rem]">
               {["Building Tomorrow", "with Precision", "and Excellence."].map((line, i) => (
-                <span key={i} className="block overflow-hidden">
+                <span key={i} className="block overflow-hidden pb-2">
                   <motion.span
                     initial={{ y: "110%" }}
                     animate={{ y: 0 }}
