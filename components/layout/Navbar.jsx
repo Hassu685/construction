@@ -10,11 +10,11 @@ import Logo from "@/components/ui/Logo";
 
 const links = [
   { href: "/", label: "Home" },
-  { href: "/about", label: "About Us" },
-  { href: "/services", label: "Services" },
-  { href: "/estimating-services", label: "Estimating" },
-  { href: "/projects", label: "Projects" },
-  { href: "/testimonials", label: "Testimonials" },
+  { href: "/abouts", label: "About Us" },
+  { href: "/service", label: "Services" },
+  { href: "/estimating-service", label: "Estimating" },
+  { href: "/project", label: "Projects" },
+  { href: "/testimonial", label: "Testimonials" },
   { href: "/faq", label: "FAQ" },
 ];
 
@@ -27,7 +27,7 @@ export default function Navbar() {
   }, [pathname]);
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 py-1 border-b border-white/10 bg-white shadow-sm">
+    <header className="fixed top-0 left-0 right-0 z-50 py-2 border-b border-white/10 bg-white shadow-sm">
       <div className="container-px flex items-center justify-between">
         <Link href="/" className="flex items-center gap-2.5 group" aria-label="Sigma Estimations home">
           <Logo className="h-14 w-14 sm:h-16 sm:w-16" variant="color" />
