@@ -38,6 +38,8 @@ export default function AboutPreview() {
             title="Precision estimating built by people who've worked the job site."
             description="Sigma Estimations was founded on a simple premise: estimates should be accurate enough to bid on with confidence, and fast enough to keep your team moving. Today we support builders, developers and contractors across four continents."
             light
+            titleClassName="!text-3xl sm:!text-4xl lg:!text-[2rem] text-white"
+            descriptionClassName="!text-[12px] sm:!text-[13px] lg:!text-sm"
           />
 
           <div className="mt-10 grid grid-cols-2 gap-6">

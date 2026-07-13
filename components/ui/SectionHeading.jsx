@@ -7,6 +7,8 @@ export default function SectionHeading({
   align = "left",
   light = false,
   className = "",
+   titleClassName = "",
+  descriptionClassName = ""
 }) {
   const alignment = align === "center" ? "items-center text-center mx-auto" : "items-start text-left";
 
@@ -26,7 +28,7 @@ export default function SectionHeading({
           <h2
             style={{ lineHeight: 1.2 }}
             className={`font-display font-semibold text-3xl sm:text-4xl lg:text-[2.50rem] tracking-normal ${light ? "text-white" : "text-navy-900"
-              }`}
+              }${titleClassName}`}
           >
             {title}
           </h2>
@@ -34,7 +36,7 @@ export default function SectionHeading({
       )}
       {description && (
         <Reveal delay={0.16}>
-          <p className={`text-base sm:text-base leading-relaxed ${light ? "text-slate-300" : "text-slate-600"}`}>
+          <p className={`text-base sm:text-lg leading-relaxed ${light ? "text-slate-300" : "text-slate-600"} ${descriptionClassName}`}>
             {description}
           </p>
         </Reveal>
