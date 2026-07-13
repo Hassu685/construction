@@ -21,13 +21,18 @@ export default function Button({
   type = "button",
   ...props
 }) {
-  const classes = `group relative inline-flex items-center justify-center gap-2 rounded-full px-7 py-3.5 text-sm font-semibold tracking-wide transition-all duration-500 ease-out ${variants[variant]} ${className}`;
+  const classes = `group relative inline-flex items-center justify-center gap-2 rounded-full px-7 py-3.5 text-sm font-semibold tracking-wide transition-all duration-500 ease-out overflow-hidden ${variants[variant]} ${className}`;
 
   const content = (
     <>
-      <span>{children}</span>
+      {/* Shine effect */}
+      <span className="pointer-events-none absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-out">
+        <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/40 to-transparent skew-x-[-20deg]" />
+      </span>
+
+      <span className="relative z-10">{children}</span>
       {icon && (
-        <ArrowUpRight className="h-4 w-4 transition-transform duration-500 ease-out group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+        <ArrowUpRight className="relative z-10 h-4 w-4 transition-transform duration-500 ease-out group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
       )}
     </>
   );

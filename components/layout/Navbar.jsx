@@ -27,7 +27,7 @@ export default function Navbar() {
   }, [pathname]);
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 py-1 border-b border-white/10 bg-white shadow-sm">
+    <header className="relative z-50 py-1 border-b border-white/10 bg-white shadow-sm">
       <div className="container-px flex items-center justify-between">
         <Link href="/" className="flex items-center gap-2.5 group" aria-label="Sigma Estimations home">
           <Logo className="h-14 w-14 sm:h-16 sm:w-16" variant="color" />
@@ -90,9 +90,8 @@ export default function Navbar() {
                 <Link
                   key={link.href}
                   href={link.href}
-                  className={`py-3 text-base font-medium border-b border-black/5 text-[#001d49] ${
-                    pathname === link.href ? "text-[#004ab7]" : ""
-                  }`}
+                  className={`py-3 text-base font-medium border-b border-black/5 text-[#001d49] ${pathname === link.href ? "text-[#004ab7]" : ""
+                    }`}
                 >
                   {link.label}
                 </Link>

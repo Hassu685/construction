@@ -1,3 +1,4 @@
+import { Poppins } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
@@ -6,6 +7,13 @@ import LoadingScreen from "@/components/ui/LoadingScreen";
 import CustomCursor from "@/components/ui/CustomCursor";
 import FloatingActions from "@/components/ui/FloatingActions";
 import { siteConfig } from "@/lib/data";
+
+const poppins = Poppins({
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700", "800"],
+  display: "swap",
+  variable: "--font-poppins",
+});
 
 export const metadata = {
   metadataBase: new URL(siteConfig.url),
@@ -61,7 +69,7 @@ export default function RootLayout({ children }) {
 
   return (
     <html lang="en" >
-      <body className="bg-surface text-navy-900 antialiased">
+      <body className={`${poppins.className} bg-surface text-navy-900 antialiased`}>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}

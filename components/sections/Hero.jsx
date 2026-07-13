@@ -32,7 +32,7 @@ export default function Hero() {
       <div className="hidden lg:block absolute top-32 left-16 right-16 dimension-line" />
 
       <div className="relative container-px w-full min-h-screen flex items-center justify-between">
-        <div className="grid lg:grid-cols-[1.1fr_0.9fr] gap-14 lg:gap-10 lg:py-24 items-center w-full">
+        <div className="grid lg:grid-cols-[1.1fr_0.9fr] gap-14 lg:gap-10 lg:py-10 items-center w-full">
           {/* Text column */}
           <div>
             <motion.div
@@ -43,11 +43,12 @@ export default function Hero() {
             >
               <span className="h-px w-10 bg-[#004AB7]" />
               <span className="eyebrow text-[#004AB7]">Estimating · Takeoff · Construction</span>
+              <span className="h-px w-10 bg-[#004AB7]" />
             </motion.div>
 
             <h1 className="font-display font-semibold text-white leading-[1.1] tracking-tight text-[2.4rem] sm:text-6xl lg:text-[3.8rem]">
               {["Building Tomorrow", "with Precision", "and Excellence."].map((line, i) => (
-                <span key={i} className="block overflow-hidden pb-2">
+                <span key={i} className="block overflow-hidden pb-3">
                   <motion.span
                     initial={{ y: "110%" }}
                     animate={{ y: 0 }}

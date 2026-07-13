@@ -17,15 +17,16 @@ export default function SectionHeading({
           <div className="flex items-center gap-3">
             <span className="h-px w-8 bg-[#004ab7]" />
             <span className={`eyebrow ${light ? "text-[#004AB7]" : "text-[#004ab7]"}`}>{eyebrow}</span>
+            <span className="h-px w-8 bg-[#004ab7]" />
           </div>
         </Reveal>
       )}
       {title && (
         <Reveal delay={0.08}>
           <h2
-            className={`font-display font-semibold tracking-tight text-3xl sm:text-4xl lg:text-[2.75rem] leading-[1.1] ${
-              light ? "text-white" : "text-navy-900"
-            }`}
+            style={{ lineHeight: 1.2 }}
+            className={`font-display font-semibold text-3xl sm:text-4xl lg:text-[2.75rem] tracking-normal ${light ? "text-white" : "text-navy-900"
+              }`}
           >
             {title}
           </h2>
