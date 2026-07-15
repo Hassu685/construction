@@ -32,7 +32,7 @@ export default function Hero() {
       <div className="hidden lg:block absolute top-32 left-16 right-16 dimension-line" />
 
       <div className="relative container-px w-full min-h-screen flex items-center justify-between">
-        <div className="grid lg:grid-cols-[1.1fr_0.9fr] gap-14 lg:gap-10 lg:py-10 items-center w-full">
+        <div className="grid lg:grid-cols-[1.1fr_0.9fr] gap-14 lg:gap-10 lg:py-28 items-center w-full">
           {/* Text column */}
           <div>
             <motion.div

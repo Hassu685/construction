@@ -23,11 +23,11 @@ export default function AboutPreview() {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-navy-950/60 via-transparent to-transparent" />
             </div>
-            <div className="absolute -bottom-2 -right-6 hidden sm:block glass rounded-2xl p-6 w-56">
-              <div className="font-display text-3xl font-semibold text-white tick-number">
+            <div className="absolute -bottom-2 -right-6 hidden sm:block glass rounded-2xl p-8 w-64">
+              <div className="font-display text-4xl font-semibold text-white tick-number">
                 <AnimatedCounter value={15} suffix="+" />
               </div>
-              <div className="text-xs text-slate-300 mt-1">Years delivering accurate estimates</div>
+              <div className="text-sm text-slate-300 mt-2">Years delivering accurate estimates</div>
             </div>
           </div>
         </Reveal>
@@ -45,13 +45,20 @@ export default function AboutPreview() {
           <div className="mt-10 grid grid-cols-2 gap-6">
             {teamHighlights.map((item) => {
               const Icon = getIcon(item.icon);
+              const numericValue = parseInt(String(item.value).replace(/[^0-9]/g, ""), 10) || 0;
+              const suffix = String(item.value).replace(/[0-9]/g, "");
               return (
-                <div key={item.label} className="flex items-start gap-3">
-                  <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-white/5 border border-white/10 text-[#004AB7]">
-                    <Icon className="h-8 w-8" strokeWidth={1.8} />
+                <div key={item.label} className="group flex items-start gap-3">
+                  <span className="flex h-14 w-14 shrink-0 items-center justify-center rounded-lg bg-white/5 border border-white/10 text-[#004AB7] transition-all duration-300 ease-out group-hover:bg-[#004AB7] group-hover:border-[#004AB7] group-hover:scale-110">
+                    <Icon
+                      className="h-10 w-10 transition-all duration-300 ease-out group-hover:text-white group-hover:rotate-6"
+                      strokeWidth={1.8}
+                    />
                   </span>
                   <div>
-                    <div className="font-display text-xl font-semibold text-white">{item.value}</div>
+                    <div className="font-display text-2xl font-semibold text-white">
+                      <AnimatedCounter value={numericValue} suffix={suffix} />
+                    </div>
                     <div className="text-xs text-slate-400 mt-0.5">{item.label}</div>
                   </div>
                 </div>

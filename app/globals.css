@@ -268,3 +268,9 @@ body {
     padding-right: 4rem;
   }
 }
+
+/* Show native pointer cursor on navbar links when hovered */
+body.cursor-native-active nav a,
+body.cursor-native-active nav button {
+  cursor: pointer !important;
+}
