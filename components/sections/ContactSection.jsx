@@ -47,9 +47,8 @@ export default function ContactSection({ showMap = true, showHeading = true }) {
                 {infoCards.map((card, i) => (
                   <div
                     key={card.title}
-                    className={`flex items-start gap-4 ${
-                      i !== 0 ? "pt-5 border-t border-navy-900/8" : ""
-                    }`}
+                    className={`flex items-start gap-4 ${i !== 0 ? "pt-5 border-t border-navy-900/8" : ""
+                      }`}
                   >
                     <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-[#001D49] text-white">
                       <card.icon className="h-5 w-5" />
@@ -162,10 +161,15 @@ export default function ContactSection({ showMap = true, showHeading = true }) {
                   <div className="sm:col-span-2">
                     <button
                       type="submit"
-                      className="group w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-full bg-[#05408C] text-white px-8 py-4 text-sm font-semibold hover:bg-[#004AB7] transition-colors shadow-gold"
+                      className="group relative overflow-hidden w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-full bg-[#05408C] text-white px-8 py-4 text-sm font-semibold hover:bg-[#004AB7] transition-colors shadow-gold"
                     >
-                      Submit Request
-                      <Send className="h-4 w-4 transition-transform duration-500 group-hover:translate-x-1" />
+                      {/* Shine effect */}
+                      <span className="pointer-events-none absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-out">
+                        <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/40 to-transparent skew-x-[-20deg]" />
+                      </span>
+
+                      <span className="relative z-10">Submit Request</span>
+                      <Send className="relative z-10 h-4 w-4 transition-transform duration-500 group-hover:translate-x-1" />
                     </button>
                   </div>
                 </form>

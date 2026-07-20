@@ -8,6 +8,7 @@ import ProjectsPreview from "@/components/sections/ProjectsPreview";
 import TestimonialsSlider from "@/components/sections/TestimonialsSlider";
 import FAQAccordion from "@/components/sections/FAQAccordion";
 import CTABand from "@/components/sections/CTABand";
+import ContactSection from "@/components/sections/ContactSection";
 
 export default function HomePage() {
   return (
@@ -21,6 +22,7 @@ export default function HomePage() {
       <ProjectsPreview />
       <TestimonialsSlider />
       <FAQAccordion limit={5} showCTA={false} />
+      <ContactSection/>
       <CTABand />
     </>
   );
