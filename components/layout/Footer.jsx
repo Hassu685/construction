@@ -50,11 +50,11 @@ export default function Footer() {
             <ul className="space-y-3 text-sm">
               {[
                 ["About Us", "/about"],
-                ["Services", "/service"],
-                ["Projects", "/project"],
-                ["Testimonials", "/testimonial"],
-                ["FAQ", "/faqs"],
-                ["Contact Us", "/contacts"],
+                ["Services", "/services"],
+                ["Projects", "/projects"],
+                ["Testimonials", "/testimonials"],
+                ["FAQ", "/faq"],
+                ["Contact Us", "/contact"],
               ].map(([label, href]) => (
                 <li key={href}>
                   <Link href={href} className="text-slate-400 hover:text-[#004ab7] transition-colors">

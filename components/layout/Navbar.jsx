@@ -11,10 +11,10 @@ import Logo from "@/components/ui/Logo";
 const links = [
     { href: "/", label: "Home" },
     { href: "/about", label: "About Us" },
-    { href: "/service", label: "Services" },
-    { href: "/estimating-service", label: "Estimating" },
-    { href: "/project", label: "Projects" },
-    { href: "/testimonial", label: "Testimonials" },
+    { href: "/services", label: "Services" },
+    { href: "/estimating-services", label: "Estimating" },
+    { href: "/projects", label: "Projects" },
+    { href: "/testimonials", label: "Testimonials" },
     { href: "/faq", label: "FAQ" },
 ];
 
