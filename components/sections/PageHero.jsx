@@ -3,7 +3,7 @@ import HeroImageSlider from "@/components/ui/HeroImageSlider";
 
 export default function PageHero({ eyebrow, title, description, sliderImages }) {
   return (
-    <section className="relative bg-navy-950 pt-40 pb-24 lg:pt-48 lg:pb-28 overflow-hidden">
+    <section className="relative bg-navy-950 pt-40 pb-24 lg:pt-44 lg:pb-28 min-h-screen overflow-hidden">
       <div className="absolute inset-0 bg-blueprint opacity-30" />
       <div className="absolute inset-0 bg-gradient-to-b from-navy-950/40 via-navy-950/70 to-navy-950" />
       <div className="absolute top-1/3 right-[10%] h-56 w-56 rounded-full bg-[#004ab7]/10 blur-3xl animate-float pointer-events-none" />
