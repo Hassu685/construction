@@ -13,9 +13,9 @@ export default function AboutPreview() {
       <div className="container-px relative grid lg:grid-cols-2 gap-16 items-center">
         <Reveal direction="right">
           <div className="relative  rounded-2xl overflow-hidden">
-            <div className="relative aspect-[4/3.8] w-full">
+            <div className="relative aspect-[4/3.6] w-full">
               <Image
-                src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=1600&auto=format&fit=crop"
+                src="/images/estimation.webp"
                 alt="Engineer reviewing blueprints on site"
                 fill
                 className="object-cover"
