@@ -87,7 +87,12 @@ export default function Footer() {
               </li>
               <li className="flex gap-3 hover:text-[#004ab7]">
                 <Mail className="h-4 w-4 text-[#004ab7] shrink-0 mt-0.5" />
-                <span>{siteConfig.email}</span>
+                <a
+                  href={`mailto:${siteConfig.email}`}
+                  className="hover:text-[#004ab7] transition-colors"
+                >
+                  {siteConfig.email}
+                </a>
               </li>
             </ul>
           </div>
