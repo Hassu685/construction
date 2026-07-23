@@ -83,11 +83,11 @@ export default function Navbar() {
 
                 <div className="hidden lg:flex items-center gap-4">
                     <a
-                        href="mailto:estimates@sigmaestimations.com"
+                        href="mailto:sigmaestimates@gmail.com"
                         className="flex items-center gap-2 text-[12px] font-medium text-[#004AB7] hover:text-[#05408C] transition-colors whitespace-nowrap"
                     >
                         <Mail className="h-4 w-4 shrink-0 text-[#004AB7]" />
-                        <span>estimates@sigmaestimations.com</span>
+                        <span>sigmaestimates@gmail.com</span>
                     </a>
                     <Button href="/contact" variant="primary" className="!py-3 !text-white !bg-[#004AB7] hover:!bg-[#05408C]">
                         Get Free Estimate
