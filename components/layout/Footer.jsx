@@ -23,7 +23,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 pb-14 border-b border-white/10">
           <div className="lg:col-span-2">
             <Link href="/" className="flex justify-start gap-2.5 mb-4">
-              <Logo className="h-24 w-16" variant="white" />
+              <Logo className="h-28 w-16" variant="white" />
             </Link>
             <p className="text-sm text-slate-400 leading-relaxed max-w-sm">{siteConfig.description}</p>
             <div className="flex items-center gap-3 mt-6">
@@ -85,11 +85,7 @@ export default function Footer() {
                 <MapPin className="h-4 w-4 text-[#004ab7] shrink-0 mt-0.5" />
                 <span>{siteConfig.address}</span>
               </li>
-              <li className="flex gap-3">
-                <Phone className="h-4 w-4 text-[#004ab7] shrink-0 mt-0.5" />
-                <span>{siteConfig.phone}</span>
-              </li>
-              <li className="flex gap-3">
+              <li className="flex gap-3 hover:text-[#004ab7]">
                 <Mail className="h-4 w-4 text-[#004ab7] shrink-0 mt-0.5" />
                 <span>{siteConfig.email}</span>
               </li>

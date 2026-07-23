@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { AnimatePresence, motion } from "framer-motion";
-import { Menu, X, Phone } from "lucide-react";
+import { Menu, X, Mail } from "lucide-react";
 import Button from "@/components/ui/Button";
 import Logo from "@/components/ui/Logo";
 
@@ -83,11 +83,11 @@ export default function Navbar() {
 
                 <div className="hidden lg:flex items-center gap-4">
                     <a
-                        href="tel:+18135550199"
-                        className="flex items-center gap-2 text-sm font-medium text-[#004AB7] hover:text-[#05408C] transition-colors"
+                        href="mailto:estimates@sigmaestimations.com"
+                        className="flex items-center gap-2 text-[12px] font-medium text-[#004AB7] hover:text-[#05408C] transition-colors whitespace-nowrap"
                     >
-                        <Phone className="h-4 w-4 text-[#004AB7]" />
-                        <p>+1 (813) 555-0199</p>
+                        <Mail className="h-4 w-4 shrink-0 text-[#004AB7]" />
+                        <span>estimates@sigmaestimations.com</span>
                     </a>
                     <Button href="/contact" variant="primary" className="!py-3 !text-white !bg-[#004AB7] hover:!bg-[#05408C]">
                         Get Free Estimate
