@@ -84,6 +84,44 @@ export default async function ServiceDetailPage({ params }) {
                 </div>
             </section>
 
+            {service.highlights && service.highlights.length > 0 && (
+                <section className="bg-surface py-20 lg:py-28">
+                    <div className="container-px flex flex-col gap-20 lg:gap-28">
+                        {service.highlights.map((block, i) => (
+                            <div
+                                key={block.heading}
+                                className={`grid lg:grid-cols-2 gap-10 lg:gap-16 items-center ${i % 2 === 1 ? "lg:[&>*:first-child]:order-2" : ""
+                                    }`}
+                            >
+                                <Reveal direction={i % 2 === 1 ? "left" : "right"}>
+                                    <div className="relative aspect-[4/3] rounded-2xl overflow-hidden corner-brackets">
+                                        <Image
+                                            src={block.image}
+                                            alt={block.heading}
+                                            fill
+                                            className="object-cover"
+                                            sizes="(min-width: 1024px) 45vw, 100vw"
+                                        />
+                                    </div>
+                                </Reveal>
+
+                                <Reveal delay={0.1}>
+                                    <h2 className="font-display text-3xl sm:text-4xl font-bold text-navy-900 tracking-tight">
+                                        {block.heading}
+                                    </h2>
+                                    <p className="mt-5 text-slate-600 text-base leading-relaxed max-w-lg">
+                                        {block.text}
+                                    </p>
+                                    <Button href="/contact" variant="primary" className="mt-8 text-white !bg-[#004AB7] hover:!bg-[#05408C]">
+                                        Get Free Quote
+                                    </Button>
+                                </Reveal>
+                            </div>
+                        ))}
+                    </div>
+                </section>
+            )}
+
             <section className="bg-surface py-20 lg:py-28">
                 <div className="container-px grid lg:grid-cols-3 gap-12">
                     <div className="lg:col-span-2">
@@ -110,7 +148,7 @@ export default async function ServiceDetailPage({ params }) {
                                 Send us your drawing set and get a detailed {service.title.toLowerCase()} estimate,
                                 most projects delivered within 72 hours.
                             </p>
-                            <Button href="/contact" variant="primary" className="w-full justify-center text-white">
+                            <Button href="/contact" variant="primary" className="w-full justify-center text-white !bg-[#004AB7] hover:!bg-[#05408C]">
                                 Get Free Estimate
                             </Button>
                         </div>
