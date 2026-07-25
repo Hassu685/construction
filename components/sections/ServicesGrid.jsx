@@ -40,7 +40,7 @@ export default function ServicesGrid({ limit }) {
                 <h3 className="mt-6 font-display text-lg font-semibold text-navy-900">{service.title}</h3>
                 <p className="mt-2.5 text-sm text-slate-600 leading-relaxed">{service.short}</p>
                 <Link
-                  href={`/services#${service.slug}`}
+                  href={`/services/${service.slug}`}
                   className="mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-navy-900 group-hover:text-[#004AB7] transition-colors"
                 >
                   Learn more
