@@ -1,0 +1,192 @@
+"use client";
+
+import { useEffect, useState } from "react";
+import Image from "next/image";
+import { motion, AnimatePresence } from "framer-motion";
+import { FileText, Download, ChevronLeft, ChevronRight } from "lucide-react";
+
+const heroSlides = [
+    { image: "https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=1200&q=80", label: "Remodel Estimate" },
+    { image: "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=1200&q=80", label: "Xactimate Report" },
+    { image: "https://images.unsplash.com/photo-1517581177682-a085bb7ffb15?w=1200&q=80", label: "Concrete Takeoff" },
+    { image: "https://images.unsplash.com/photo-1587582423116-ec07293f0395?w=1200&q=80", label: "Masonry Estimate" },
+];
+
+function HeroSlider() {
+    const [index, setIndex] = useState(0);
+
+    useEffect(() => {
+        const timer = setInterval(() => {
+            setIndex((i) => (i + 1) % heroSlides.length);
+        }, 4000);
+        return () => clearInterval(timer);
+    }, []);
+
+    const goTo = (i) => setIndex(i);
+    const prev = () => setIndex((i) => (i - 1 + heroSlides.length) % heroSlides.length);
+    const next = () => setIndex((i) => (i + 1) % heroSlides.length);
+
+    return (
+        <div className="relative w-full aspect-[4/3] rounded-2xl overflow-hidden hidden lg:flex">
+            <AnimatePresence mode="wait">
+                <motion.div
+                    key={index}
+                    initial={{ opacity: 0, scale: 1.03 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    exit={{ opacity: 0 }}
+                    transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+                    className="absolute inset-0"
+                >
+                    <Image
+                        src={heroSlides[index].image}
+                        alt={heroSlides[index].label}
+                        fill
+                        sizes="(max-width: 1024px) 100vw, 50vw"
+                        className="object-cover"
+                        priority={index === 0}
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#001d49]/70 via-transparent to-transparent" />
+                </motion.div>
+            </AnimatePresence>
+
+            {/* Dot indicators */}
+            <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex items-center gap-2 z-10">
+                {heroSlides.map((_, i) => (
+                    <button
+                        key={i}
+                        onClick={() => setIndex(i)}
+                        aria-label={`Show slide ${i + 1}`}
+                        data-cursor-hover
+                        className="relative h-1.5 rounded-full bg-white/30 overflow-hidden transition-all duration-500"
+                        style={{ width: i === index ? 28 : 6 }}
+                    >
+                        {i === index && (
+                            <motion.span
+                                layoutId="slider-dot"
+                                className="absolute inset-0 bg-[#004ab7] rounded-full"
+                            />
+                        )}
+                    </button>
+                ))}
+            </div>
+        </div>
+    );
+}
+
+const samples = [
+    {
+        title: "Remodel",
+        image: "https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=800&q=80",
+        file: "/samples/remodel-estimate-sample.pdf",
+    },
+    {
+        title: "Xactimate",
+        image: "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=800&q=80",
+        file: "/samples/xactimate-sample.pdf",
+    },
+    {
+        title: "Concrete",
+        image: "https://images.unsplash.com/photo-1517581177682-a085bb7ffb15?w=800&q=80",
+        file: "/samples/concrete-estimate-sample.pdf",
+    },
+    {
+        title: "Masonry",
+        image: "https://images.unsplash.com/photo-1587582423116-ec07293f0395?w=800&q=80",
+        file: "/samples/masonry-estimate-sample.pdf",
+    },
+    {
+        title: "Roofing",
+        image: "https://images.unsplash.com/photo-1635424824800-692767998d07?w=800&q=80",
+        file: "/samples/roofing-estimate-sample.pdf",
+    },
+    {
+        title: "Electrical",
+        image: "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=800&q=80",
+        file: "/samples/electrical-estimate-sample.pdf",
+    },
+    {
+        title: "Plumbing",
+        image: "https://images.unsplash.com/photo-1538474705339-e87de81450e8?w=800&q=80",
+        file: "/samples/plumbing-estimate-sample.pdf",
+    },
+    {
+        title: "Drywall",
+        image: "https://images.unsplash.com/photo-1618221469555-7f3ad97540d6?w=800&q=80",
+        file: "/samples/drywall-estimate-sample.pdf",
+    },
+];
+
+export default function SamplesPage() {
+    return (
+        <>
+            {/* Page header — matches Home hero style */}
+            <section className="relative bg-navy-950 overflow-hidden h-screen flex items-center justify-center lg:pt-28">
+                <div className="absolute inset-0 bg-blueprint opacity-40 pointer-events-none" />
+                <div className="relative container-px grid lg:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <div className="flex flex-wrap items-center gap-2 sm:gap-3 text-[10px] sm:text-xs font-semibold tracking-[0.15em] sm:tracking-[0.2em] text-[#004AB7] mb-4">
+                            <span>ESTIMATING</span>
+                            <span className="h-px w-5 sm:w-8 bg-[#004AB7]" />
+                            <span>TAKEOFF</span>
+                            <span className="h-px w-5 sm:w-8 bg-[#004AB7]" />
+                            <span>CONSTRUCTION</span>
+                        </div>
+                        <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white leading-tight max-w-2xl">
+                            Sample <span className="text-[#004AB7]">Estimates</span> &amp; Takeoffs
+                        </h1>
+                        <p className="mt-4 text-sm sm:text-base text-slate-300 max-w-xl leading-relaxed">
+                            Download real, code-compliant sample reports across our core trades —
+                            see the level of detail your project team can expect on bid day.
+                        </p>
+                    </div>
+
+                    <HeroSlider />
+                </div>
+            </section>
+
+            {/* Sample cards grid */}
+            <section className="relative bg-white py-20">
+                <div className="absolute inset-0 bg-blueprint opacity-[0.15] pointer-events-none" />
+                <div className="relative container-px">
+                    <div className="grid grid-cols-1 lg:grid-cols-4 gap-6 sm:gap-8">
+                        {samples.map((sample, i) => (
+                            <motion.div
+                                key={sample.title}
+                                initial={{ opacity: 0, y: 24 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true, margin: "-60px" }}
+                                transition={{ duration: 0.5, delay: i * 0.08, ease: [0.22, 1, 0.36, 1] }}
+                                className="group"
+                            >
+                                <h3 className="text-xl sm:text-2xl font-bold text-[#001d49] text-center mb-4 tracking-tight">
+                                    {sample.title.toUpperCase()}
+                                </h3>
+
+                                <div className="relative aspect-[4/3] rounded-xl overflow-hidden border border-black/5 shadow-sm">
+                                    <Image
+                                        src={sample.image}
+                                        alt={`${sample.title} estimate sample`}
+                                        fill
+                                        sizes="(max-width: 640px) 50vw, 25vw"
+                                        className="object-cover transition-transform duration-500 group-hover:scale-105"
+                                    />
+                                </div>
+
+                                <a href={sample.file}
+                                    download
+                                    className="group mt-4 w-full inline-flex justify-center items-center gap-2 rounded-md bg-[#0b1220] px-4 py-2.5 text-xs sm:text-sm font-semibold text-white hover:bg-[#001d49] transition-colors duration-300"
+                                >
+                                    <span className="relative h-3.5 w-3.5 overflow-hidden">
+                                        <FileText className="h-3.5 w-3.5 absolute inset-0 transition-all duration-300 group-hover:-translate-y-4 group-hover:opacity-0" />
+                                        <Download className="h-3.5 w-3.5 absolute inset-0 transition-all duration-300 translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100" />
+                                    </span>
+                                    Download Sample
+                                </a>
+                            </motion.div>
+                        ))}
+                    </div>
+                </div>
+            </section>
+        </>
+    );
+}
