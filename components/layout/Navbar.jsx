@@ -11,7 +11,7 @@ import Logo from "@/components/ui/Logo";
 const links = [
     { href: "/", label: "Home" },
     { href: "/about", label: "About Us" },
-    { href: "/Samples", label: "Samples" },
+    { href: "/samples", label: "Samples" },
     { href: "/services", label: "Services" },
     { href: "/faq", label: "Faq" }
 ];
@@ -81,11 +81,11 @@ export default function Navbar() {
 
                 <div className="hidden lg:flex items-center gap-4">
                     <a
-                        href="mailto:sigmaestimates@gmail.com"
+                        href="mailto:info@sigmaestimations.com"
                         className="flex items-center gap-2 text-[12px] font-medium text-[#004AB7] hover:text-[#05408C] transition-colors whitespace-nowrap"
                     >
                         <Mail className="h-4 w-4 shrink-0 text-[#004AB7]" />
-                        <span>sigmaestimates@gmail.com</span>
+                        <span>info@sigmaestimations.com</span>
                     </a>
                     <Button href="/contact" variant="primary" className="!py-3 !text-white !bg-[#004AB7] hover:!bg-[#05408C]">
                         Get Free Estimate
