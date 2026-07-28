@@ -120,7 +120,7 @@ export default function SamplesPage() {
     return (
         <>
             {/* Page header — matches Home hero style */}
-            <section className="relative bg-navy-950 overflow-hidden h-screen flex items-center justify-center lg:pt-28">
+            <section className="relative bg-navy-950 overflow-hidden h-screen flex items-center justify-center lg:pt-12">
                 <div className="absolute inset-0 bg-blueprint opacity-40 pointer-events-none" />
                 <div className="relative container-px grid lg:grid-cols-2 gap-12 items-center">
                     <div>
