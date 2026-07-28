@@ -188,7 +188,7 @@ export default function SamplesPage() {
                                 className="group"
                             >
                                 <a
-                                    href={sample.file}
+                                    href={encodeURI(sample.file)}
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     data-cursor-hover
@@ -200,7 +200,7 @@ export default function SamplesPage() {
                                 </a>
 
                                 <a
-                                    href={sample.file}
+                                    href={encodeURI(sample.file)}
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     data-cursor-hover
@@ -222,7 +222,7 @@ export default function SamplesPage() {
                                 </a>
 
                                 <a
-                                    href={sample.file}
+                                    href={encodeURI(sample.file)}
                                     target="_blank"
                                     data-cursor-hover
                                     className="group mt-4 w-full inline-flex justify-center items-center gap-2 rounded-md bg-[#0b1220] px-4 py-2.5 text-xs sm:text-sm font-semibold text-white hover:bg-[#001d49] transition-colors duration-300"
