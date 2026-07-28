@@ -231,21 +231,6 @@ export default function ContactSection({ showMap = true, showHeading = true }) {
             </div>
           </Reveal>
         </div>
-
-        {/* Full-width map */}
-        {showMap && (
-          <Reveal delay={0.15} className="mt-6">
-            <div className="relative rounded-2xl overflow-hidden h-80 sm:h-96 border border-navy-900/8 bg-navy-100">
-              <iframe
-                title="Sigma Estimations office location map"
-                src="https://www.google.com/maps?q=Tampa%20Florida&output=embed"
-                className="w-full h-full grayscale-[15%]"
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-              />
-            </div>
-          </Reveal>
-        )}
       </div>
     </section>
   );
