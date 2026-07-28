@@ -73,74 +73,75 @@ function HeroSlider() {
     );
 }
 
-// NOTE: file names below are the EXACT names of the files from your
-// uploaded "Samples" folder. Drop each file into /public/samples/ using
-// these exact names (no renaming needed) and the links will work as-is.
+// NOTE: file paths below mirror the EXACT folder + file structure from your
+// uploaded "Samples" zip (Samples/<FOLDER>/<file>). Just copy the whole
+// "Samples" folder into /public/ and rename it to "samples" (lowercase) —
+// the links below will then work as-is, no renaming of files needed.
 const samples = [
     {
         title: "Concrete",
         image: "https://images.unsplash.com/photo-1517581177682-a085bb7ffb15?w=800&q=80",
-        file: "/samples/ESTIMATE - STORAGE BUILDING AT GADSDEN CITY HS ATHLETIC FIELDS -V1.xlsx",
+        file: "/samples/CONCRETE/ESTIMATE - STORAGE BUILDING AT GADSDEN CITY HS ATHLETIC FIELDS -V1.xlsx",
     },
     {
         title: "Drywall & Studs",
         image: "https://images.unsplash.com/photo-1618221469555-7f3ad97540d6?w=800&q=80",
-        file: "/samples/ESTIMATE - MAVIS TIRES & BRAKES -V1.xlsx",
+        file: "/samples/DRYWALL, STUDS/ESTIMATE - MAVIS TIRES & BRAKES -V1.xlsx",
     },
     {
         title: "Earthworks",
         image: "https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=800&q=80",
-        file: "/samples/HOWARD KNOB GRADING (Earthworks Estimation).pdf",
+        file: "/samples/EARTHWORKS/HOWARD KNOB GRADING (Earthworks Estimation).pdf",
     },
     {
         title: "Electrical",
         image: "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=800&q=80",
-        file: "/samples/ESTIMATE - RAVI PATEL CONVENIENCE STORE -V1.xlsx",
+        file: "/samples/ELECTRICAL/ESTIMATE - RAVI PATEL CONVENIENCE STORE -V1.xlsx",
     },
     {
         title: "Finishes",
         image: "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=800&q=80",
-        file: "/samples/ESTIMATE - NEW CUSTOM HOME -V1.xlsx",
+        file: "/samples/FINISHES/ESTIMATE - NEW CUSTOM HOME -V1.xlsx",
     },
     {
         title: "Fireproofing",
         image: "https://images.unsplash.com/photo-1587582423116-ec07293f0395?w=800&q=80",
-        file: "/samples/ESTIMATE - RICKENBACKER ARC FULL FACILITY RENOVATION -V1.xlsx",
+        file: "/samples/FIREPROOFING/ESTIMATE - RICKENBACKER ARC FULL FACILITY RENOVATION -V1.xlsx",
     },
     {
         title: "General Contractor",
         image: "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=800&q=80",
-        file: "/samples/ESTIMATE - TENANT IMPROVEMENT FOR MARINATED MASALA MEATS -V1.xlsx",
+        file: "/samples/GENERAL CONTRACTOR (GC)/ESTIMATE - TENANT IMPROVEMENT FOR MARINATED MASALA MEATS -V1.xlsx",
     },
     {
         title: "Lumber Framing",
         image: "https://images.unsplash.com/photo-1635424824800-692767998d07?w=800&q=80",
-        file: "/samples/ESTIMATE - A NEW SINGLE FAMILY HOME -V1.xlsx",
+        file: "/samples/LUMBER FRAMING/ESTIMATE - A NEW SINGLE FAMILY HOME -V1.xlsx",
     },
     {
         title: "Mechanical (HVAC)",
         image: "https://images.unsplash.com/photo-1538474705339-e87de81450e8?w=800&q=80",
-        file: "/samples/ESTIMATE - AMAZING EXPLORERS YULEE -V1.xlsx",
+        file: "/samples/MECHANICAL (HVAC)/ESTIMATE - AMAZING EXPLORERS YULEE -V1.xlsx",
     },
     {
         title: "Painting",
         image: "https://images.unsplash.com/photo-1618221469555-7f3ad97540d6?w=800&q=80",
-        file: "/samples/ESTIMATE - DAVID T. CARDENAS SENIOR CENTER & POLICE HEADQUARTERS.xlsx",
+        file: "/samples/PAINTING/ESTIMATE - DAVID T. CARDENAS SENIOR CENTER & POLICE HEADQUARTERS.xlsx",
     },
     {
         title: "Plumbing",
         image: "https://images.unsplash.com/photo-1538474705339-e87de81450e8?w=800&q=80",
-        file: "/samples/ESTIMATE - MERCED CONVENIENCE STORE -V1.xlsx",
+        file: "/samples/PLUMBING/ESTIMATE - MERCED CONVENIENCE STORE -V1.xlsx",
     },
     {
         title: "Roofing",
         image: "https://images.unsplash.com/photo-1635424824800-692767998d07?w=800&q=80",
-        file: "/samples/ESTIMATE - ALTUS PUBLIC SCHOOLS L. MENDEL RIVERS ELEMENTARY -V1.xlsx",
+        file: "/samples/ROOFING/ESTIMATE - ALTUS PUBLIC SCHOOLS L. MENDEL RIVERS ELEMENTARY -V1.xlsx",
     },
     {
         title: "Structure",
         image: "https://images.unsplash.com/photo-1517581177682-a085bb7ffb15?w=800&q=80",
-        file: "/samples/ESTIMATE - OC BITHLO COMMUNITY PARK FITNESS CENTER EXPANSION -V1.xlsx",
+        file: "/samples/STRUCTURE/ESTIMATE - OC BITHLO COMMUNITY PARK FITNESS CENTER EXPANSION -V1.xlsx",
     },
 ];
 
