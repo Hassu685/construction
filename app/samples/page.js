@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
-import { FileText, Download, ChevronLeft, ChevronRight } from "lucide-react";
+import { FileText, Download, ChevronLeft, ChevronRight, Eye } from "lucide-react";
 
 const heroSlides = [
     { image: "https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=1200&q=80", label: "Remodel Estimate" },
@@ -158,22 +158,44 @@ export default function SamplesPage() {
                                 transition={{ duration: 0.5, delay: i * 0.08, ease: [0.22, 1, 0.36, 1] }}
                                 className="group"
                             >
-                                <h3 className="text-xl sm:text-2xl font-bold text-[#001d49] text-center mb-4 tracking-tight">
-                                    {sample.title.toUpperCase()}
-                                </h3>
+                                <a
+                                    href={sample.file}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    data-cursor-hover
+                                    className="relative inline-block w-full text-center mb-4"
+                                >
+                                    <h3 className="relative inline-block text-xl sm:text-2xl font-bold text-[#001d49] tracking-tight after:content-[''] after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:w-0 after:bg-[#004AB7] after:transition-all after:duration-300 hover:after:w-full">
+                                        {sample.title.toUpperCase()}
+                                    </h3>
+                                </a>
 
-                                <div className="relative aspect-[4/3] rounded-xl overflow-hidden border border-black/5 shadow-sm">
+                                <a
+                                    href={sample.file}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    data-cursor-hover
+                                    className="group/img relative block aspect-[4/3] rounded-xl overflow-hidden border border-black/5 shadow-sm"
+                                >
                                     <Image
                                         src={sample.image}
                                         alt={`${sample.title} estimate sample`}
                                         fill
                                         sizes="(max-width: 640px) 50vw, 25vw"
-                                        className="object-cover transition-transform duration-500 group-hover:scale-105"
+                                        className="object-cover transition-transform duration-500 group-hover/img:scale-105"
                                     />
-                                </div>
+                                    <div className="absolute inset-0 bg-[#004AB7]/0 group-hover/img:bg-[#004AB7]/75 transition-colors duration-500 flex items-center justify-center">
+                                        <span className="opacity-0 translate-y-3 group-hover/img:opacity-100 group-hover/img:translate-y-0 transition-all duration-500 flex items-center gap-2 rounded-full bg-white text-[#001d49] px-5 py-2.5 text-xs font-semibold">
+                                            <Eye className="h-3.5 w-3.5" />
+                                            View PDF
+                                        </span>
+                                    </div>
+                                </a>
 
-                                <a href={sample.file}
+                                <a
+                                    href={sample.file}
                                     download
+                                    data-cursor-hover
                                     className="group mt-4 w-full inline-flex justify-center items-center gap-2 rounded-md bg-[#0b1220] px-4 py-2.5 text-xs sm:text-sm font-semibold text-white hover:bg-[#001d49] transition-colors duration-300"
                                 >
                                     <span className="relative h-3.5 w-3.5 overflow-hidden">

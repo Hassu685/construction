@@ -2,22 +2,54 @@
 
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { Mail, MapPin, Phone, Clock, Send, CheckCircle2 } from "lucide-react";
+import { Mail, MapPin, Phone, Clock, Send, CheckCircle2, AlertCircle } from "lucide-react";
 import SectionHeading from "@/components/ui/SectionHeading";
 import Reveal from "@/components/ui/Reveal";
 import { siteConfig } from "@/lib/data";
 
 export default function ContactSection({ showMap = true, showHeading = true }) {
   const [submitted, setSubmitted] = useState(false);
-  const [form, setForm] = useState({ name: "", email: "", phone: "", projectType: "Residential", message: "" });
+  const [submitting, setSubmitting] = useState(false);
+  const [error, setError] = useState("");
+  const [form, setForm] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    projectType: "Residential",
+    message: "",
+    hpField: "", // honeypot, must stay empty
+  });
 
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    setSubmitted(true);
+    setError("");
+    setSubmitting(true);
+
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(form),
+      });
+
+      const data = await res.json();
+
+      if (!res.ok) {
+        setError(data.error || "Something went wrong. Please try again.");
+        setSubmitting(false);
+        return;
+      }
+
+      setSubmitted(true);
+    } catch (err) {
+      setError("Could not reach the server. Please check your connection and try again.");
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   const infoCards = [
@@ -99,6 +131,25 @@ export default function ContactSection({ showMap = true, showHeading = true }) {
                 </motion.div>
               ) : (
                 <form onSubmit={handleSubmit} className="grid sm:grid-cols-2 gap-5">
+                  {/* Honeypot field — hidden from real users, bots tend to fill it */}
+                  <input
+                    type="text"
+                    name="hpField"
+                    value={form.hpField}
+                    onChange={handleChange}
+                    tabIndex={-1}
+                    autoComplete="off"
+                    className="hidden"
+                    aria-hidden="true"
+                  />
+
+                  {error && (
+                    <div className="sm:col-span-2 flex items-start gap-2.5 rounded-xl bg-red-50 border border-red-200 px-4 py-3 text-sm text-red-700">
+                      <AlertCircle className="h-4 w-4 shrink-0 mt-0.5" />
+                      <span>{error}</span>
+                    </div>
+                  )}
+
                   <div className="sm:col-span-1">
                     <label className="text-xs font-medium text-slate-500 mb-1.5 block">Full Name</label>
                     <input
@@ -161,14 +212,17 @@ export default function ContactSection({ showMap = true, showHeading = true }) {
                   <div className="sm:col-span-2">
                     <button
                       type="submit"
-                      className="group relative overflow-hidden w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-full bg-[#05408C] text-white px-8 py-4 text-sm font-semibold hover:bg-[#004AB7] transition-colors shadow-gold"
+                      disabled={submitting}
+                      className="group relative overflow-hidden w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-full bg-[#05408C] text-white px-8 py-4 text-sm font-semibold hover:bg-[#004AB7] transition-colors shadow-gold disabled:opacity-60 disabled:cursor-not-allowed"
                     >
                       {/* Shine effect */}
                       <span className="pointer-events-none absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-out">
                         <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/40 to-transparent skew-x-[-20deg]" />
                       </span>
 
-                      <span className="relative z-10">Submit Request</span>
+                      <span className="relative z-10">
+                        {submitting ? "Sending..." : "Submit Request"}
+                      </span>
                       <Send className="relative z-10 h-4 w-4 transition-transform duration-500 group-hover:translate-x-1" />
                     </button>
                   </div>
