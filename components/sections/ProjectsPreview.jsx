@@ -25,7 +25,7 @@ export default function SamplesPreview() {
           </Reveal>
         </div>
 
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 lg:grid-cols-4 gap-6">
           {featured.map((sample, i) => (
             <Reveal key={sample.title} delay={i * 0.08}>
               <SampleCard sample={sample} priority={i === 0} />
