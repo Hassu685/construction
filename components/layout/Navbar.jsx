@@ -13,7 +13,7 @@ const links = [
     { href: "/about", label: "About Us" },
     { href: "/samples", label: "Samples" },
     { href: "/services", label: "Services" },
-    { href: "/faq", label: "Faq" }
+    { href: "/estimating-services", label: "estimating" }
 ];
 
 export default function Navbar() {
@@ -51,83 +51,80 @@ export default function Navbar() {
         <motion.header
             animate={{ y: hidden ? "-100%" : "0%" }}
             transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
-            className="fixed top-0 left-0 right-0 z-50 py-1 border-b border-white/10 bg-white shadow-sm"
+            className="fixed top-0 left-0 right-0 z-50 py-3 sm:py-4"
         >
-            <div className="container-px flex items-center justify-between">
-                <Link href="/" className="flex items-center gap-2.5 group" aria-label="Sigma Estimations home">
-                    <Logo className="h-14 w-14 sm:h-16 sm:w-16" variant="color" />
-                </Link>
+            <div className="container-px">
+                <div className="mx-auto max-w-7xl rounded-full bg-white shadow-[0_8px_30px_rgba(0,0,0,0.08)] border border-black/5 pl-4 pr-2 sm:pl-6 sm:pr-3 py-2">
+                    <div className="flex items-center justify-between">
+                        <Link href="/" className="flex items-center gap-2.5 group shrink-0" aria-label="Sigma Estimations home">
+                            <Logo className="h-11 w-11 sm:h-12 sm:w-12" variant="color" />
+                        </Link>
 
-                <nav className="hidden lg:flex items-center gap-1">
-                    {links.map((link) => {
-                        const active = pathname === link.href;
-                        return (
-                            <Link
-                                key={link.href}
-                                href={link.href}
-                                className={`relative px-4 py-2 text-sm font-medium transition-colors duration-500 hover:text-[#004AB7] text-[#001d49]`}
-                            >
-                                {link.label}
-                                {active && (
-                                    <motion.span
-                                        layoutId="nav-active"
-                                        className="absolute left-4 right-4 -bottom-0.5 h-px bg-[#05408C]"
-                                    />
-                                )}
-                            </Link>
-                        );
-                    })}
-                </nav>
+                        <nav className="hidden lg:flex items-center gap-1">
+                            {links.map((link) => {
+                                const active = pathname === link.href;
+                                return (
+                                    <Link
+                                        key={link.href}
+                                        href={link.href}
+                                        className={`relative px-4 py-2 text-sm font-medium transition-colors duration-500 hover:text-[#004AB7] text-[#001d49]`}
+                                    >
+                                        {link.label}
+                                        {active && (
+                                            <motion.span
+                                                layoutId="nav-active"
+                                                className="absolute left-4 right-4 -bottom-0.5 h-px bg-[#05408C]"
+                                            />
+                                        )}
+                                    </Link>
+                                );
+                            })}
+                        </nav>
 
-                <div className="hidden lg:flex items-center gap-4">
-                    <a
-                        href="mailto:info@sigmaestimations.com"
-                        className="flex items-center gap-2 text-[12px] font-medium text-[#004AB7] hover:text-[#05408C] transition-colors whitespace-nowrap"
-                    >
-                        <Mail className="h-4 w-4 shrink-0 text-[#004AB7]" />
-                        <span>info@sigmaestimations.com</span>
-                    </a>
-                    <Button href="/contact" variant="primary" className="!py-3 !text-white !bg-[#004AB7] hover:!bg-[#05408C]">
-                        Get Free Estimate
-                    </Button>
-                </div>
-
-                <button
-                    className="lg:hidden p-2 text-black"
-                    onClick={() => setOpen((o) => !o)}
-                    aria-label="Toggle navigation menu"
-                >
-                    {open ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-                </button>
-            </div>
-
-            <AnimatePresence>
-                {open && (
-                    <motion.div
-                        initial={{ opacity: 0, height: 0 }}
-                        animate={{ opacity: 1, height: "auto" }}
-                        exit={{ opacity: 0, height: 0 }}
-                        transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
-                        className="lg:hidden overflow-hidden bg-white border-t border-black/5 mt-3"
-                    >
-                        <div className="container-px py-6 flex flex-col gap-1">
-                            {links.map((link) => (
-                                <Link
-                                    key={link.href}
-                                    href={link.href}
-                                    className={`py-3 text-base font-medium border-b border-black/5 text-[#001d49] ${pathname === link.href ? "text-[#004ab7]" : ""
-                                        }`}
-                                >
-                                    {link.label}
-                                </Link>
-                            ))}
-                            <Button href="/contact" variant="primary" className="mt-5 w-full justify-center !text-white !bg-[#004AB7] hover:!bg-[#05408C]">
+                        <div className="hidden lg:flex items-center gap-4">
+                            <Button href="/contact" variant="primary" className="!py-2.5 !rounded-full !text-white !bg-[#004AB7] hover:!bg-[#05408C]">
                                 Get Free Estimate
                             </Button>
                         </div>
-                    </motion.div>
-                )}
-            </AnimatePresence>
-        </motion.header >
+
+                        <button
+                            className="lg:hidden p-2 text-black"
+                            onClick={() => setOpen((o) => !o)}
+                            aria-label="Toggle navigation menu"
+                        >
+                            {open ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+                        </button>
+                    </div>
+                </div>
+
+                <AnimatePresence>
+                    {open && (
+                        <motion.div
+                            initial={{ opacity: 0, height: 0 }}
+                            animate={{ opacity: 1, height: "auto" }}
+                            exit={{ opacity: 0, height: 0 }}
+                            transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
+                            className="lg:hidden overflow-hidden bg-white border border-black/5 rounded-3xl shadow-[0_8px_30px_rgba(0,0,0,0.08)] mt-3"
+                        >
+                            <div className="container-px py-6 flex flex-col gap-1">
+                                {links.map((link) => (
+                                    <Link
+                                        key={link.href}
+                                        href={link.href}
+                                        className={`py-3 text-base font-medium border-b border-black/5 text-[#001d49] ${pathname === link.href ? "text-[#004ab7]" : ""
+                                            }`}
+                                    >
+                                        {link.label}
+                                    </Link>
+                                ))}
+                                <Button href="/contact" variant="primary" className="mt-5 w-full justify-center !text-white !bg-[#004AB7] hover:!bg-[#05408C]">
+                                    Get Free Estimate
+                                </Button>
+                            </div>
+                        </motion.div>
+                    )}
+                </AnimatePresence>
+            </div>
+        </motion.header>
     );
 }

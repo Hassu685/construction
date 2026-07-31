@@ -51,7 +51,7 @@ export default function Footer() {
               {[
                 ["About Us", "/about"],
                 ["Services", "/services"],
-                ["Projects", "/projects"],
+                ["Samples", "/samples"],
                 ["Testimonials", "/testimonials"],
                 ["FAQ", "/faq"],
                 ["Contact Us", "/contact"],

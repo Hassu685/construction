@@ -83,7 +83,7 @@ export default function Hero() {
               <Button href="/contact" variant="primary" className="!text-white !bg-[#004AB7] hover:!bg-[#05408C]">
                 Get Free Estimate
               </Button>
-              <Button href="/projects" variant="outline" icon={false}>
+              <Button href="/samples" variant="outline" icon={false}>
                 <span className="flex items-center gap-2">
                   <PlayCircle className="h-4 w-4" />
                   View Projects

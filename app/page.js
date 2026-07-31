@@ -15,7 +15,7 @@ export default function HomePage() {
     <>
       <Hero />
       <TrustedBy />
-      <ServicesGrid limit={6} />
+      <ServicesGrid limit={10} />
       <AboutPreview />
       <WhyChoose />
       <Process />
