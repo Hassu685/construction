@@ -70,7 +70,7 @@ export default function Footer() {
             <ul className="space-y-3 text-sm">
               {services.slice(0, 6).map((s) => (
                 <li key={s.slug}>
-                  <Link href={`/services#${s.slug}`} className="text-slate-400 hover:text-[#004ab7] transition-colors">
+                  <Link href={`/services/${s.slug}`} className="text-slate-400 hover:text-[#004ab7] transition-colors">
                     {s.title}
                   </Link>
                 </li>
@@ -101,12 +101,12 @@ export default function Footer() {
         <div className="flex flex-col sm:flex-row items-center justify-between gap-4 pt-8 text-xs text-slate-500">
           <p>© {new Date().getFullYear()} {siteConfig.name}. All rights reserved.</p>
           <div>
-            <p>
+            <p className="hover:text-[#004ab7]">
               Crafted by the Revamp 180° team.</p>
           </div>
           <div className="flex gap-4">
-            <Link href="/" className="hover:text-[#004ab7] transition-colors">Privacy Policy</Link>
-            <Link href="/" className="hover:text-[#004ab7] transition-colors mr-7">Terms of Service</Link>
+            <Link href="/privacy-policy" className="hover:text-[#004ab7] transition-colors">Privacy Policy</Link>
+            <Link href="/terms-of-service" className="hover:text-[#004ab7] transition-colors mr-7">Terms of Service</Link>
           </div>
         </div>
       </div>

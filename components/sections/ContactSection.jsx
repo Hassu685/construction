@@ -64,7 +64,7 @@ export default function ContactSection({ showMap = true, showHeading = true }) {
         {showHeading && (
           <SectionHeading
             eyebrow="Get In Touch"
-            title="Tell us about your project."
+            title="Talk to us about your project."
             description="Share your drawings and timeline — we'll follow up with next steps within one business day."
             align="center"
             className="mx-auto mb-16"

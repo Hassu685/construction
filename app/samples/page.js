@@ -6,8 +6,8 @@ import { motion, AnimatePresence } from "framer-motion";
 import { FileText, Download, ChevronLeft, ChevronRight, Eye } from "lucide-react";
 
 const heroSlides = [
-    { image: "https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=1200&q=80", label: "Remodel Estimate" },
-    { image: "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=1200&q=80", label: "Xactimate Report" },
+    { image: "/sample-headings/Sample Estimates & Takeoffs 1.webp", label: "Remodel Estimate" },
+    { image: "/sample-headings/Sample Estimates & Takeoffs 2.webp", label: "Xactimate Report" },
     { image: "https://images.unsplash.com/photo-1517581177682-a085bb7ffb15?w=1200&q=80", label: "Concrete Takeoff" },
     { image: "https://images.unsplash.com/photo-1587582423116-ec07293f0395?w=1200&q=80", label: "Masonry Estimate" },
 ];
@@ -85,12 +85,12 @@ const samples = [
     },
     {
         title: "Drywall & Studs",
-        image: "https://images.unsplash.com/photo-1618221469555-7f3ad97540d6?w=800&q=80",
+        image: "/Samples-pic/DRYWALL & STUDS.webp",
         file: "/samples/DRYWALL, STUDS/ESTIMATE - MAVIS TIRES & BRAKES -V1.xlsx",
     },
     {
         title: "Earthworks",
-        image: "https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=800&q=80",
+        image: "/Samples-pic/EARTHWORKS.webp",
         file: "/samples/EARTHWORKS/HOWARD KNOB GRADING (Earthworks Estimation).pdf",
     },
     {
@@ -105,27 +105,27 @@ const samples = [
     },
     {
         title: "Fireproofing",
-        image: "https://images.unsplash.com/photo-1587582423116-ec07293f0395?w=800&q=80",
+        image: "/Samples-pic/Fireprofing.webp",
         file: "/samples/FIREPROOFING/ESTIMATE - RICKENBACKER ARC FULL FACILITY RENOVATION -V1.xlsx",
     },
     {
         title: "General Contractor",
-        image: "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=800&q=80",
+        image: "/Samples-pic/General contracting.webp",
         file: "/samples/GENERAL CONTRACTOR (GC)/ESTIMATE - TENANT IMPROVEMENT FOR MARINATED MASALA MEATS -V1.xlsx",
     },
     {
         title: "Lumber Framing",
-        image: "https://images.unsplash.com/photo-1635424824800-692767998d07?w=800&q=80",
+        image: "/Samples-pic/Lumber framing.webp",
         file: "/samples/LUMBER FRAMING/ESTIMATE - A NEW SINGLE FAMILY HOME -V1.xlsx",
     },
     {
         title: "Mechanical (HVAC)",
-        image: "https://images.unsplash.com/photo-1538474705339-e87de81450e8?w=800&q=80",
+        image: "/Samples-pic/Mechinical (HVAC).webp",
         file: "/samples/MECHANICAL (HVAC)/ESTIMATE - AMAZING EXPLORERS YULEE -V1.xlsx",
     },
     {
         title: "Painting",
-        image: "https://images.unsplash.com/photo-1618221469555-7f3ad97540d6?w=800&q=80",
+        image: "/Samples-pic/Painting.webp",
         file: "/samples/PAINTING/ESTIMATE - DAVID T. CARDENAS SENIOR CENTER & POLICE HEADQUARTERS.xlsx",
     },
     {
@@ -140,7 +140,7 @@ const samples = [
     },
     {
         title: "Structure",
-        image: "https://images.unsplash.com/photo-1517581177682-a085bb7ffb15?w=800&q=80",
+        image: "/Samples-pic/Structure.webp",
         file: "/samples/STRUCTURE/ESTIMATE - OC BITHLO COMMUNITY PARK FITNESS CENTER EXPANSION -V1.xlsx",
     },
     {

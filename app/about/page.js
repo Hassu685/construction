@@ -23,15 +23,15 @@ export default function AboutPage() {
         description="Fifteen years of construction estimating, quantity takeoff and project management built for builders who bid to win."
         sliderImages={[
           {
-            src: "https://images.unsplash.com/photo-1521790797524-b2497295b8a0?q=80&w=1400&auto=format&fit=crop",
+            src: "/About/1.webp",
             alt: "Sigma Estimations engineering team on a construction site",
           },
           {
-            src: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=1400&auto=format&fit=crop",
+            src: "/About/2.webp",
             alt: "Team reviewing structural drawings",
           },
           {
-            src: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=1400&auto=format&fit=crop",
+            src: "/About/Numbers your project team can build on..webp",
             alt: "Engineer inspecting a job site",
           },
         ]}
