@@ -101,10 +101,10 @@ export default function Footer() {
         <div className="flex flex-col sm:flex-row items-center justify-between gap-4 pt-8 text-xs text-slate-500">
           <p>© {new Date().getFullYear()} {siteConfig.name}. All rights reserved.</p>
           <div>
-            <Link href={"https://revamp180-website.vercel.app/"}>
-              <p className="hover:text-[#004ab7]">
-                Crafted by the Revamp 180° team.</p>
-            </Link>
+            <p className="flex">
+              Crafted by the <a className="hover:text-[#004ab7] flex px-1"
+                href="https://revamp180.com/"
+                target="_blank">Revamp 180°</a> team.</p>
           </div>
           <div className="flex gap-4">
             <Link href="/privacy-policy" className="hover:text-[#004ab7] transition-colors">Privacy Policy</Link>
