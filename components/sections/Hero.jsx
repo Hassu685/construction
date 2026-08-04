@@ -39,14 +39,14 @@ export default function Hero() {
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
-              className="flex items-center gap-3 mb-7"
+              className="hidden lg:flex items-center gap-3 mb-7"
             >
               <span className="h-px w-10 bg-[#004AB7]" />
               <span className="eyebrow text-[#004AB7]">Estimating · Takeoff · Construction</span>
               <span className="h-px w-10 bg-[#004AB7]" />
             </motion.div>
 
-            <h1 className="font-display font-semibold text-white leading-[1.1] tracking-tight text-[2.4rem] sm:text-6xl lg:text-[3.8rem]">
+            <h1 className="font-display font-semibold text-white mt-14 lg:mt-0 leading-[1.1] tracking-tight text-[2.4rem] sm:text-6xl lg:text-[3.8rem]">
               {["Building Tomorrow", "with Precision", "and Excellence."].map((line, i) => (
                 <span key={i} className="block overflow-hidden pb-3">
                   <motion.span

@@ -54,7 +54,7 @@ export default function Navbar() {
             className="fixed top-2 left-0 right-0 z-50 py-3 sm:py-4"
         >
             <div className="container-px">
-                <div className="mx-auto max-w-7xl rounded-full bg-white/50 backdrop-blur-md shadow-[0_8px_30px_rgba(0,0,0,0.08)] border border-white/40 pl-4 pr-2 sm:pl-6 sm:pr-3 overflow-visible">
+                <div className="mx-auto max-w-7xl rounded-full bg-white shadow-[0_8px_30px_rgba(0,0,0,0.08)] border border-white/40 pl-4 pr-2 sm:pl-6 sm:pr-3 overflow-visible">
                     <div className="flex items-center justify-between h-14 sm:h-16">
                         <Link href="/" className="flex items-center gap-2.5 group shrink-0" aria-label="Sigma Estimations home">
                             <Logo className="h-20 w-20 sm:h-24 sm:w-24" variant="color" />
@@ -95,7 +95,7 @@ export default function Navbar() {
                             animate={{ opacity: 1, height: "auto" }}
                             exit={{ opacity: 0, height: 0 }}
                             transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
-                            className="lg:hidden overflow-hidden bg-white/80 backdrop-blur-md border border-white/40 rounded-3xl shadow-[0_8px_30px_rgba(0,0,0,0.08)] mt-3"
+                            className="lg:hidden overflow-hidden bg-white border border-white/40 rounded-3xl shadow-[0_8px_30px_rgba(0,0,0,0.08)] mt-3"
                         >
                             <div className="container-px py-6 flex flex-col gap-1">
                                 {links.map((link) => (

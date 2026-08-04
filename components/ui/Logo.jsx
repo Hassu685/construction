@@ -1,7 +1,7 @@
 import Image from "next/image";
 
 const sources = {
-  color: "/logo-mark-color.png",
+  color: "/New-logo.png",
   white: "/logo-mark-white.png",
 };
 

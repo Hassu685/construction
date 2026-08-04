@@ -144,7 +144,7 @@ const samples = [
         file: "/samples/STRUCTURE/ESTIMATE - OC BITHLO COMMUNITY PARK FITNESS CENTER EXPANSION -V1.xlsx",
     },
     {
-        title: "Structures",
+        title: "Renovation",
         image: "https://images.unsplash.com/photo-1517581177682-a085bb7ffb15?w=800&q=80",
         file: "/samples/structures/ESTIMATE- HOWARD KNOB -V1.xlsx",
     },
