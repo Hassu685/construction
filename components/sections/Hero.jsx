@@ -46,7 +46,7 @@ export default function Hero() {
               <span className="h-px w-10 bg-[#004AB7]" />
             </motion.div>
 
-            <h1 className="font-display font-semibold text-white mt-14 lg:mt-0 leading-[1.1] tracking-tight text-[2.4rem] sm:text-6xl lg:text-[3.8rem]">
+            <h1 className="font-display font-semibold text-white leading-[1.1] tracking-tight text-[2.4rem] sm:text-6xl lg:text-[3.8rem]">
               {["Building Tomorrow", "with Precision", "and Excellence."].map((line, i) => (
                 <span key={i} className="block overflow-hidden pb-3">
                   <motion.span
