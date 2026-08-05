@@ -86,7 +86,6 @@ export default function EstimatingServicesPage() {
                     <type.icon className="h-5 w-5" />
                   </span>
                   <h3 className="font-display text-lg font-semibold text-navy-900 mt-6">{type.title}</h3>
-                  <span className="eyebrow text-[#004ab7] mt-2">{type.accuracy}</span>
                   <p className="text-sm text-slate-600 mt-4 leading-relaxed">{type.description}</p>
                   <ul className="mt-6 flex flex-col gap-2.5">
                     {type.deliverables.map((d) => (
