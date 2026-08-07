@@ -6,6 +6,13 @@ import { Facebook, Instagram, Linkedin, Twitter, MapPin, Mail, Phone, ArrowRight
 import Logo from "@/components/ui/Logo";
 import { siteConfig, services } from "@/lib/data";
 
+
+const WhatsAppIcon = (props) => (
+  <svg viewBox="0 0 32 32" fill="currentColor" {...props}>
+    <path d="M16.02 2.667c-7.363 0-13.353 5.99-13.353 13.353 0 2.354.615 4.65 1.782 6.671L2.667 29.333l6.79-1.78a13.29 13.29 0 0 0 6.56 1.72h.006c7.362 0 13.353-5.99 13.353-13.353 0-3.567-1.389-6.92-3.91-9.44a13.26 13.26 0 0 0-9.44-3.913Zm0 24.42h-.005a11.08 11.08 0 0 1-5.65-1.548l-.405-.24-4.03 1.057 1.076-3.928-.264-.404a11.05 11.05 0 0 1-1.694-5.905c0-6.11 4.972-11.08 11.078-11.08a11 11 0 0 1 7.834 3.248 11 11 0 0 1 3.24 7.837c0 6.11-4.972 11.078-11.08 11.078v-.115Zm6.077-8.294c-.333-.167-1.97-.972-2.276-1.083-.305-.111-.527-.167-.75.167-.222.333-.86 1.083-1.054 1.305-.194.222-.389.25-.722.083-.333-.167-1.406-.518-2.678-1.652-.99-.883-1.658-1.973-1.852-2.306-.194-.334-.02-.514.146-.68.15-.15.334-.389.5-.583.167-.195.222-.334.333-.556.111-.223.056-.417-.028-.584-.083-.166-.75-1.805-1.027-2.472-.27-.65-.545-.562-.75-.573l-.639-.011c-.222 0-.583.083-.888.417-.306.333-1.166 1.14-1.166 2.778s1.194 3.222 1.36 3.444c.166.223 2.35 3.588 5.694 5.03.795.344 1.415.55 1.899.703.798.254 1.523.218 2.098.132.64-.095 1.97-.805 2.247-1.583.278-.778.278-1.445.194-1.584-.083-.14-.305-.222-.638-.389Z" />
+  </svg>
+);
+
 export default function Footer() {
   const [email, setEmail] = useState("");
   const [submitted, setSubmitted] = useState(false);
@@ -31,7 +38,7 @@ export default function Footer() {
                 { icon: Linkedin, href: siteConfig.social.linkedin },
                 { icon: Facebook, href: siteConfig.social.facebook },
                 { icon: Instagram, href: siteConfig.social.instagram },
-                { icon: Twitter, href: siteConfig.social.twitter },
+                { icon: WhatsAppIcon, href: siteConfig.social.whatsApp },
               ].map(({ icon: Icon, href }, i) => (
                 <a
                   key={i}
