@@ -199,7 +199,7 @@ export default function SamplesPage() {
                                     data-cursor-hover
                                     className="relative inline-block w-full text-center mb-4"
                                 >
-                                    <h3 className="relative inline-block text-xl sm:text-2xl font-bold text-[#001d49] tracking-tight after:content-[''] after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:w-0 after:bg-[#004AB7] after:transition-all after:duration-300 hover:after:w-full">
+                                    <h3 className="relative inline-block text-[1rem] font-bold text-[#001d49] tracking-tight after:content-[''] after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:w-0 after:bg-[#004AB7] after:transition-all after:duration-300 hover:after:w-full">
                                         {sample.title.toUpperCase()}
                                     </h3>
                                 </a>
