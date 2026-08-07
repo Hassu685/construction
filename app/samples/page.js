@@ -109,11 +109,6 @@ const samples = [
         file: "/samples/FIREPROOFING/ESTIMATE - RICKENBACKER ARC FULL FACILITY RENOVATION -V1.xlsx",
     },
     {
-        title: "General Contractor",
-        image: "/Samples-pic/General contracting.webp",
-        file: "/samples/GENERAL CONTRACTOR (GC)/ESTIMATE - TENANT IMPROVEMENT FOR MARINATED MASALA MEATS -V1.xlsx",
-    },
-    {
         title: "Lumber Framing",
         image: "/Samples-pic/Lumber framing.webp",
         file: "/samples/LUMBER FRAMING/ESTIMATE - A NEW SINGLE FAMILY HOME -V1.xlsx",
@@ -148,6 +143,11 @@ const samples = [
         image: "https://images.unsplash.com/photo-1517581177682-a085bb7ffb15?w=800&q=80",
         file: "/samples/structures/ESTIMATE- HOWARD KNOB -V1.xlsx",
     },
+     {
+        title: "General Contractor",
+        image: "/Samples-pic/General contracting.webp",
+        file: "/samples/GENERAL CONTRACTOR (GC)/ESTIMATE - TENANT IMPROVEMENT FOR MARINATED MASALA MEATS -V1.xlsx",
+    }
 ];
 
 export default function SamplesPage() {
