@@ -6,8 +6,8 @@ import { motion, AnimatePresence } from "framer-motion";
 import { FileText, Download, ChevronLeft, ChevronRight, Eye } from "lucide-react";
 
 const heroSlides = [
-    { image: "/sample-headings/Sample Estimates & Takeoffs 1.webp", label: "Remodel Estimate" },
-    { image: "/sample-headings/Sample Estimates & Takeoffs 2.webp", label: "Xactimate Report" },
+    { image: "/sample-headings/sample-estimates-takeoffs-1.webp", label: "Remodel Estimate" },
+    { image: "/sample-headings/sample-estimates-takeoffs-2.webp", label: "Xactimate Report" },
     { image: "https://images.unsplash.com/photo-1517581177682-a085bb7ffb15?w=1200&q=80", label: "Concrete Takeoff" },
     { image: "https://images.unsplash.com/photo-1587582423116-ec07293f0395?w=1200&q=80", label: "Masonry Estimate" },
 ];
@@ -85,7 +85,7 @@ const samples = [
     },
     {
         title: "Drywall & Studs",
-        image: "/Samples-pic/DRYWALL & STUDS.webp",
+        image: "/Samples-pic/drywall-studs.webp",
         file: "/samples/DRYWALL, STUDS/ESTIMATE - MAVIS TIRES & BRAKES -V1.xlsx",
     },
     {
@@ -110,12 +110,12 @@ const samples = [
     },
     {
         title: "Lumber Framing",
-        image: "/Samples-pic/Lumber framing.webp",
+        image: "/Samples-pic/Lumber-framing.webp",
         file: "/samples/LUMBER FRAMING/ESTIMATE - A NEW SINGLE FAMILY HOME -V1.xlsx",
     },
     {
         title: "Mechanical (HVAC)",
-        image: "/Samples-pic/Mechinical (HVAC).webp",
+        image: "/Samples-pic/Mechinical-(HVAC).webp",
         file: "/samples/MECHANICAL (HVAC)/ESTIMATE - AMAZING EXPLORERS YULEE -V1.xlsx",
     },
     {
@@ -145,7 +145,7 @@ const samples = [
     },
      {
         title: "General Contractor",
-        image: "/Samples-pic/General contracting.webp",
+        image: "/Samples-pic/General-contracting.webp",
         file: "/samples/GENERAL CONTRACTOR (GC)/ESTIMATE - TENANT IMPROVEMENT FOR MARINATED MASALA MEATS -V1.xlsx",
     }
 ];
