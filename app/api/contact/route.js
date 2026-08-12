@@ -16,23 +16,21 @@ function escapeHtml(value) {
 }
 
 export async function POST(request) {
-    let body;
-    try {
-        body = await request.json();
-    } catch {
-        return NextResponse.json({ error: "Invalid request body." }, { status: 400 });
-    }
+    const formData = await request.formData();
 
+    const hpField = formData.get("hpField");
     // Bot trap: if the hidden field is filled, pretend success and drop it.
-    if (body.hpField) {
+    if (hpField) {
         return NextResponse.json({ ok: true });
     }
 
-    const name = body.name?.trim() ?? "";
-    const email = body.email?.trim() ?? "";
-    const phone = body.phone?.trim() ?? "";
-    const projectType = body.projectType?.trim() ?? "";
-    const message = body.message?.trim() ?? "";
+    const name = String(formData.get("name") || "").trim();
+    const email = String(formData.get("email") || "").trim();
+    const phone = String(formData.get("phone") || "").trim();
+    const projectType = String(formData.get("projectType") || "").trim();
+    const message = String(formData.get("message") || "").trim();
+
+    const uploadedFiles = formData.getAll("attachments").filter((f) => f && f.size > 0);
 
     if (!name || !email || !message) {
         return NextResponse.json(
@@ -44,6 +42,15 @@ export async function POST(request) {
     if (!EMAIL_RE.test(email)) {
         return NextResponse.json(
             { error: "Please enter a valid email address." },
+            { status: 400 }
+        );
+    }
+
+    const MAX_TOTAL_SIZE = 20 * 1024 * 1024; // 20MB
+    const totalSize = uploadedFiles.reduce((sum, f) => sum + f.size, 0);
+    if (totalSize > MAX_TOTAL_SIZE) {
+        return NextResponse.json(
+            { error: "Attachments exceed the 20MB limit." },
             { status: 400 }
         );
     }
@@ -77,6 +84,12 @@ export async function POST(request) {
         message: escapeHtml(message).replace(/\n/g, "<br/>"),
     };
 
+    const attachmentNote = uploadedFiles.length
+        ? `<p style="margin:12px 0 0"><strong>Attachments:</strong> ${uploadedFiles
+            .map((f) => escapeHtml(f.name))
+            .join(", ")}</p>`
+        : "";
+
     const html = `
     <div style="font-family:Arial,Helvetica,sans-serif;max-width:560px;margin:0 auto;color:#1a1a2e">
       <div style="background:linear-gradient(135deg,#0F172A,#004AB7);padding:24px;border-radius:12px 12px 0 0">
@@ -91,6 +104,7 @@ export async function POST(request) {
         <hr style="border:none;border-top:1px solid #e5e5f0;margin:16px 0"/>
         <p style="margin:0 0 6px"><strong>Project Details</strong></p>
         <p style="margin:0;line-height:1.6;color:#333">${safe.message}</p>
+        ${attachmentNote}
       </div>
     </div>
   `;
@@ -101,7 +115,17 @@ export async function POST(request) {
         `Email: ${email}\n` +
         `Phone: ${phone || "Not provided"}\n` +
         `Project Type: ${projectType || "Not specified"}\n\n` +
-        `Message:\n${message}\n`;
+        `Message:\n${message}\n` +
+        (uploadedFiles.length
+            ? `\nAttachments: ${uploadedFiles.map((f) => f.name).join(", ")}\n`
+            : "");
+
+    const attachments = await Promise.all(
+        uploadedFiles.map(async (file) => ({
+            filename: file.name,
+            content: Buffer.from(await file.arrayBuffer()),
+        }))
+    );
 
     try {
         await transporter.sendMail({
@@ -111,6 +135,7 @@ export async function POST(request) {
             subject: `[Estimate Request] ${projectType || "General"} — ${name}`,
             text,
             html,
+            attachments,
         });
     } catch (err) {
         console.error("Contact form: failed to send email", err);

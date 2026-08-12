@@ -1,16 +1,40 @@
 "use client";
 
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { motion } from "framer-motion";
-import { Mail, MapPin, Phone, Clock, Send, CheckCircle2, AlertCircle } from "lucide-react";
+import {
+  Mail,
+  MapPin,
+  Phone,
+  Clock,
+  Send,
+  CheckCircle2,
+  AlertCircle,
+  UploadCloud,
+  FileText,
+  X,
+} from "lucide-react";
 import SectionHeading from "@/components/ui/SectionHeading";
 import Reveal from "@/components/ui/Reveal";
 import { siteConfig } from "@/lib/data";
+
+const MAX_FILES = 5;
+const MAX_TOTAL_SIZE = 20 * 1024 * 1024; // 20MB
+const ACCEPTED_TYPES = ".pdf,.doc,.docx,.xls,.xlsx,.dwg,.jpg,.jpeg,.png";
+
+function formatSize(bytes) {
+  if (bytes < 1024) return `${bytes} B`;
+  if (bytes < 1024 * 1024) return `${(bytes / 1024).toFixed(0)} KB`;
+  return `${(bytes / (1024 * 1024)).toFixed(1)} MB`;
+}
 
 export default function ContactSection({ showMap = true, showHeading = true }) {
   const [submitted, setSubmitted] = useState(false);
   const [submitting, setSubmitting] = useState(false);
   const [error, setError] = useState("");
+  const [files, setFiles] = useState([]);
+  const [dragActive, setDragActive] = useState(false);
+  const fileInputRef = useRef(null);
   const [form, setForm] = useState({
     name: "",
     email: "",
@@ -24,16 +48,53 @@ export default function ContactSection({ showMap = true, showHeading = true }) {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
+  const addFiles = (incoming) => {
+    setError("");
+    const incomingArr = Array.from(incoming);
+    const combined = [...files, ...incomingArr];
+
+    if (combined.length > MAX_FILES) {
+      setError(`You can attach up to ${MAX_FILES} files.`);
+      return;
+    }
+
+    const totalSize = combined.reduce((sum, f) => sum + f.size, 0);
+    if (totalSize > MAX_TOTAL_SIZE) {
+      setError("Total attachment size can't exceed 20MB.");
+      return;
+    }
+
+    setFiles(combined);
+  };
+
+  const handleFileInput = (e) => {
+    if (e.target.files?.length) addFiles(e.target.files);
+    e.target.value = ""; // allow re-selecting the same file later
+  };
+
+  const removeFile = (index) => {
+    setFiles((prev) => prev.filter((_, i) => i !== index));
+  };
+
+  const handleDrop = (e) => {
+    e.preventDefault();
+    setDragActive(false);
+    if (e.dataTransfer.files?.length) addFiles(e.dataTransfer.files);
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     setError("");
     setSubmitting(true);
 
     try {
+      const payload = new FormData();
+      Object.entries(form).forEach(([key, value]) => payload.append(key, value));
+      files.forEach((file) => payload.append("attachments", file));
+
       const res = await fetch("/api/contact", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(form),
+        body: payload,
       });
 
       const data = await res.json();
@@ -209,6 +270,69 @@ export default function ContactSection({ showMap = true, showHeading = true }) {
                       placeholder="Tell us about your project scope, timeline and drawing status..."
                     />
                   </div>
+
+                  {/* Document upload */}
+                  <div className="sm:col-span-2">
+                    <label className="text-xs font-medium text-slate-500 mb-1.5 block">
+                      Drawings / Documents <span className="text-slate-400 font-normal">(optional)</span>
+                    </label>
+
+                    <div
+                      onDragOver={(e) => {
+                        e.preventDefault();
+                        setDragActive(true);
+                      }}
+                      onDragLeave={() => setDragActive(false)}
+                      onDrop={handleDrop}
+                      onClick={() => fileInputRef.current?.click()}
+                      data-cursor-hover
+                      className={`flex items-center gap-3 rounded-xl border-2 border-dashed px-4 py-3 cursor-pointer transition-colors duration-300 ${dragActive
+                          ? "border-gold-500 bg-[#EEF3FE]"
+                          : "border-navy-900/15 hover:border-gold-500/60 hover:bg-[#EEF3FE]/40"
+                        }`}
+                    >
+                      <UploadCloud className="h-4 w-4 text-[#004ab7] shrink-0" />
+                      <p className="text-sm text-navy-900 flex-1">
+                        <span className="font-medium">Click to upload</span>
+                        <span className="text-slate-400"> or drag and drop — PDF, Word, Excel, DWG, images</span>
+                      </p>
+                      <input
+                        ref={fileInputRef}
+                        type="file"
+                        multiple
+                        accept={ACCEPTED_TYPES}
+                        onChange={handleFileInput}
+                        className="hidden"
+                      />
+                    </div>
+
+                    {files.length > 0 && (
+                      <ul className="mt-2 flex flex-col gap-1.5">
+                        {files.map((file, i) => (
+                          <li
+                            key={`${file.name}-${i}`}
+                            className="flex items-center gap-2.5 rounded-lg border border-navy-900/10 bg-slate-50 px-3 py-2"
+                          >
+                            <FileText className="h-3.5 w-3.5 text-[#004ab7] shrink-0" />
+                            <div className="min-w-0 flex-1 flex items-baseline gap-2">
+                              <span className="text-xs text-navy-900 truncate">{file.name}</span>
+                              <span className="text-[11px] text-slate-400 shrink-0">{formatSize(file.size)}</span>
+                            </div>
+                            <button
+                              type="button"
+                              onClick={() => removeFile(i)}
+                              aria-label={`Remove ${file.name}`}
+                              data-cursor-hover
+                              className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full text-slate-400 hover:bg-red-50 hover:text-red-500 transition-colors"
+                            >
+                              <X className="h-3.5 w-3.5" />
+                            </button>
+                          </li>
+                        ))}
+                      </ul>
+                    )}
+                  </div>
+
                   <div className="sm:col-span-2">
                     <button
                       type="submit"

@@ -61,15 +61,26 @@ export default function Navbar() {
                         </Link>
 
                         <nav className="hidden lg:flex items-center gap-1">
-                            {links.map((link) => (
-                                <Link
-                                    key={link.href}
-                                    href={link.href}
-                                    className={`relative px-4 py-2 text-[16px] font-medium transition-colors duration-500 hover:text-[#004AB7] text-[#001d49]`}
-                                >
-                                    {link.label}
-                                </Link>
-                            ))}
+                            {links.map((link) => {
+                                const active = pathname === link.href;
+                                return (
+                                    <Link
+                                        key={link.href}
+                                        href={link.href}
+                                        className={`relative px-4 py-2 text-[16px] font-medium transition-colors duration-500 hover:text-[#004AB7] ${active ? "text-[#004AB7]" : "text-[#001d49]"
+                                            }`}
+                                    >
+                                        {link.label}
+                                        {active && (
+                                            <motion.span
+                                                layoutId="nav-active"
+                                                className="absolute left-4 right-4 -bottom-0.5 h-[2px] rounded-full bg-[#004AB7]"
+                                                transition={{ type: "spring", stiffness: 380, damping: 30 }}
+                                            />
+                                        )}
+                                    </Link>
+                                );
+                            })}
                         </nav>
 
                         <div className="hidden lg:flex items-center gap-4">
