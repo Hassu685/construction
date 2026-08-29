@@ -1,30 +1,31 @@
 "use client";
 
 import { useEffect, useRef } from "react";
-import { animate, useInView } from "framer-motion";
+import { motion, useInView, useMotionValue, useSpring } from "framer-motion";
 
-export default function AnimatedCounter({ value, suffix = "", duration = 1.6, className = "" }) {
+export default function AnimatedCounter({ value, suffix = "", duration = 2, className = "" }) {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, amount: 0.5 });
+  const motionValue = useMotionValue(0);
+  const springValue = useSpring(motionValue, {
+    damping: 30,
+    stiffness: 60,
+  });
 
   useEffect(() => {
-    if (!isInView || !ref.current) return;
+    if (isInView) {
+      motionValue.set(value);
+    }
+  }, [isInView, motionValue, value]);
 
-    const node = ref.current;
-    const controls = animate(0, value, {
-      duration,
-      ease: [0.16, 1, 0.3, 1],
-      onUpdate(latest) {
-        node.textContent = Math.round(latest).toString();
-      },
-      onComplete() {
-        // guarantee it always lands exactly on the real value, no off-by-one
-        node.textContent = value.toString();
-      },
+  useEffect(() => {
+    const unsubscribe = springValue.on("change", (latest) => {
+      if (ref.current) {
+        ref.current.textContent = Math.floor(latest).toString();
+      }
     });
-
-    return () => controls.stop();
-  }, [isInView, value, duration]);
+    return unsubscribe;
+  }, [springValue]);
 
   return (
     <span className={className}>

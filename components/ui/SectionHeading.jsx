@@ -7,8 +7,6 @@ export default function SectionHeading({
   align = "left",
   light = false,
   className = "",
-   titleClassName = "",
-  descriptionClassName = ""
 }) {
   const alignment = align === "center" ? "items-center text-center mx-auto" : "items-start text-left";
 
@@ -17,18 +15,18 @@ export default function SectionHeading({
       {eyebrow && (
         <Reveal>
           <div className="flex items-center gap-3">
-            <span className="h-px w-8 bg-[#004ab7]" />
-            <span className={`eyebrow ${light ? "text-[#004AB7]" : "text-[#004ab7]"}`}>{eyebrow}</span>
-            <span className="h-px w-8 bg-[#004ab7]" />
+            <span className="h-px w-8 bg-gold-500" />
+            <span className={`eyebrow ${light ? "text-gold-400" : "text-gold-600"}`}>{eyebrow}</span>
+            <span className="h-px w-8 bg-gold-500" />
           </div>
         </Reveal>
       )}
       {title && (
         <Reveal delay={0.08}>
           <h2
-            style={{ lineHeight: 1.2 }}
-            className={`font-display font-semibold text-3xl sm:text-4xl lg:text-[2.50rem] tracking-normal ${light ? "text-white" : "text-navy-900"
-              }${titleClassName}`}
+            className={`font-display font-semibold tracking-tight text-3xl sm:text-4xl lg:text-[2.75rem] leading-[1.1] ${
+              light ? "text-white" : "text-navy-900"
+            }`}
           >
             {title}
           </h2>
@@ -36,7 +34,7 @@ export default function SectionHeading({
       )}
       {description && (
         <Reveal delay={0.16}>
-          <p className={`text-base sm:text-lg leading-relaxed ${light ? "text-slate-300" : "text-slate-600"} ${descriptionClassName}`}>
+          <p className={`text-base sm:text-lg leading-relaxed ${light ? "text-slate-300" : "text-slate-600"}`}>
             {description}
           </p>
         </Reveal>

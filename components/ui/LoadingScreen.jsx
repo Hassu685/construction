@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import Logo from "@/components/ui/Logo";
+import { Compass } from "lucide-react";
 
 export default function LoadingScreen() {
   const [loading, setLoading] = useState(true);
@@ -17,33 +17,26 @@ export default function LoadingScreen() {
       {loading && (
         <motion.div
           exit={{ opacity: 0, transition: { duration: 0.6, ease: [0.16, 1, 0.3, 1] } }}
-          className="fixed inset-0 z-[100] flex flex-col items-center justify-center bg-navy-950"
+          className="fixed inset-0 z-[100] flex flex-col items-center justify-center bg-black"
         >
           <div className="absolute inset-0 bg-blueprint opacity-50" />
-
           <motion.div
             initial={{ scale: 0.85, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-            className="relative flex flex-col items-center gap-8"
+            className="relative flex flex-col items-center gap-5"
           >
-            <div className="relative flex items-center justify-center">
-              {/* ambient glow behind the logo */}
-              <motion.div
-                animate={{ opacity: [0.4, 0.7, 0.4], scale: [1, 1.15, 1] }}
-                transition={{ duration: 1.6, repeat: Infinity, ease: "easeInOut" }}
-                className="absolute h-24 w-24 rounded-full bg-[#004ab7]/30 blur-2xl"
-              />
-              <motion.div
-                animate={{ scale: [1, 1.06, 1] }}
-                transition={{ duration: 1.6, repeat: Infinity, ease: "easeInOut" }}
-                className="relative"
-              >
-                <Logo className="h-16 w-28 sm:h-20 sm:w-32" variant="white" />
-              </motion.div>
+            <motion.span
+              animate={{ rotate: 360 }}
+              transition={{ duration: 2.4, repeat: Infinity, ease: "linear" }}
+              className="flex h-16 w-16 items-center justify-center rounded-2xl bg-gold-500 text-black"
+            >
+              <Compass className="h-8 w-8" strokeWidth={2.2} />
+            </motion.span>
+            <div className="font-display text-2xl font-semibold text-white tracking-tight">
+              Build<span className="text-gold-400">Nova</span>
             </div>
-
-            <div className="relative h-[2px] w-32 sm:w-40 bg-white/10 overflow-hidden rounded-full">
+            <div className="relative h-[2px] w-40 bg-white/10 overflow-hidden rounded-full">
               <motion.span
                 initial={{ x: "-100%" }}
                 animate={{ x: "100%" }}

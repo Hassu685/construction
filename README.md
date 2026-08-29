@@ -1,4 +1,4 @@
-# Sigma Estimations
+# BuildNova Estimating & Construction
 
 A premium, animated marketing website for a construction estimating and project management company, built with Next.js 15 (App Router), JavaScript, Tailwind CSS, Framer Motion and Lucide icons.
 
@@ -6,8 +6,7 @@ A premium, animated marketing website for a construction estimating and project 
 
 - **Signature motif:** a "surveyor's blueprint" language — dimension lines with tick marks, corner brackets that appear on hover (like a viewfinder locking onto a measurement), and a faint navy blueprint grid — tying the visual identity to estimating and precision rather than generic construction stock imagery.
 - **Type system:** Space Grotesk (display, geometric and confident) paired with Inter (body) and JetBrains Mono for all numeric data — stats, prices, dates — so figures read like measured quantities.
-- **Palette:** Deep Navy `#0F172A`, Slate `#1E293B`, Sigma Blue `#2F66DE` (sampled from the Sigma Estimations logo), Surface `#F8FAFC`, Success `#10B981`. The accent color is defined under the `gold` key in `tailwind.config.js` for backwards compatibility with existing class names (`bg-[#004ab7]`, `shadow-gold`, etc.) — only the hex values were swapped from the original amber brief to this brand blue.
-- **Logo:** `public/logo-mark.png` is the Sigma Estimations icon mark (background removed), rendered via `components/ui/Logo.jsx` across the navbar, footer, loading screen and favicon.
+- **Palette:** Deep Navy `#0F172A`, Slate `#1E293B`, Construction Gold `#F59E0B`, Surface `#F8FAFC`, Success `#10B981`, exactly as specified in the brief.
 
 ## Getting started
 

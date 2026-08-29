@@ -14,7 +14,7 @@ export default function Reveal({
   children,
   direction = "up",
   delay = 0,
-  duration = 0.9,
+  duration = 0.7,
   className = "",
   once = true,
   amount = 0.2,
@@ -26,7 +26,7 @@ export default function Reveal({
       initial={{ opacity: 0, ...offset }}
       whileInView={{ opacity: 1, y: 0, x: 0 }}
       viewport={{ once, amount }}
-      transition={{ duration, delay, ease: [0.22, 1, 0.36, 1] }}
+      transition={{ duration, delay, ease: [0.16, 1, 0.3, 1] }}
       className={className}
     >
       {children}

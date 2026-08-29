@@ -24,21 +24,18 @@ module.exports = {
         slate2: {
           DEFAULT: "#1E293B",
         },
-        // NOTE: key kept as "gold" for backwards compatibility with existing
-        // class names (bg-[#004ab7], text-[#004ab7], shadow-gold, etc.) across
-        // the codebase — values below are the Sigma Estimations brand blue.
         gold: {
-          DEFAULT: "#2F66DE",
-          50: "#EEF3FE",
-          100: "#D6E4FC",
-          200: "#AECAF9",
-          300: "#7FA8F3",
-          400: "#5286EA",
-          500: "#2F66DE",
-          600: "#234FBA",
-          700: "#1C3E93",
-          800: "#17316F",
-          900: "#142A5C",
+          DEFAULT: "#F59E0B",
+          50: "#FFF8EB",
+          100: "#FEECC7",
+          200: "#FDD98A",
+          300: "#FCC24D",
+          400: "#FAAB24",
+          500: "#F59E0B",
+          600: "#D17E06",
+          700: "#A85E08",
+          800: "#894A0D",
+          900: "#723D0F",
         },
         surface: "#F8FAFC",
         success: {
@@ -52,7 +49,7 @@ module.exports = {
       },
       backgroundImage: {
         "blueprint-grid":
-          "linear-gradient(rgba(47,102,222,0.06) 1px, transparent 1px), linear-gradient(90deg, rgba(47,102,222,0.06) 1px, transparent 1px)",
+          "linear-gradient(rgba(245,158,11,0.06) 1px, transparent 1px), linear-gradient(90deg, rgba(245,158,11,0.06) 1px, transparent 1px)",
         "noise": "url('/images/noise.png')",
       },
       backgroundSize: {
@@ -60,9 +57,8 @@ module.exports = {
         "grid-sm": "20px 20px",
       },
       boxShadow: {
-        premium: "0 20px 50px -20px rgba(15,23,42,0.28)",
-        gold: "0 10px 30px -12px rgba(47,102,222,0.35)",
-        "gold-hover": "0 14px 36px -14px rgba(47,102,222,0.45)",
+        premium: "0 20px 60px -15px rgba(15,23,42,0.35)",
+        gold: "0 10px 40px -10px rgba(245,158,11,0.45)",
         glass: "0 8px 32px 0 rgba(15,23,42,0.12)",
       },
       animation: {

@@ -11,37 +11,23 @@ import { Target, Eye } from "lucide-react";
 export const metadata = {
   title: "About Us",
   description:
-    "Learn about Sigma Estimations — our mission, our engineers, and fifteen years of accurate construction estimating.",
+    "Learn about BuildNova Estimating & Construction — our mission, our engineers, and fifteen years of accurate construction estimating.",
 };
 
 export default function AboutPage() {
   return (
     <>
       <PageHero
-        eyebrow="About Sigma Estimations"
+        eyebrow="About BuildNova"
         title="Estimators and engineers who understand the job site."
         description="Fifteen years of construction estimating, quantity takeoff and project management built for builders who bid to win."
-        sliderImages={[
-          {
-            src: "/About/1.webp",
-            alt: "Sigma Estimations engineering team on a construction site",
-          },
-          {
-            src: "/About/2.webp",
-            alt: "Team reviewing structural drawings",
-          },
-          {
-            src: "/About/Numbers your project team can build on..webp",
-            alt: "Engineer inspecting a job site",
-          },
-        ]}
       />
 
       {/* Mission & Vision */}
       <section className="bg-surface py-24 lg:py-32">
         <div className="container-px grid lg:grid-cols-2 gap-16 items-center">
-          <Reveal direction="right" className="relative  rounded-2xl overflow-hidden">
-            <div className="relative aspect-[4/3]">
+          <Reveal direction="right" className="relative corner-brackets rounded-2xl overflow-hidden">
+            <div className="relative aspect-[4/5]">
               <Image
                 src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=1600&auto=format&fit=crop"
                 alt="Construction team reviewing structural plans"
@@ -58,7 +44,7 @@ export default function AboutPage() {
               title="Numbers your project team can build on."
             />
             <div className="flex gap-4">
-              <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-[#001D49] text-white">
+              <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-black text-gold-400">
                 <Target className="h-5 w-5" />
               </span>
               <div>
@@ -70,7 +56,7 @@ export default function AboutPage() {
               </div>
             </div>
             <div className="flex gap-4">
-              <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-[#001D49] text-white">
+              <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-black text-gold-400">
                 <Eye className="h-5 w-5" />
               </span>
               <div>
@@ -86,7 +72,7 @@ export default function AboutPage() {
       </section>
 
       {/* Stats */}
-      <section className="bg-navy-900 py-16">
+      <section className="bg-black py-16">
         <div className="container-px grid grid-cols-2 lg:grid-cols-4 gap-8">
           {stats.map((stat) => (
             <div key={stat.label} className="text-center">
@@ -100,7 +86,7 @@ export default function AboutPage() {
       </section>
 
       {/* Timeline */}
-      <section className="bg-surface py-24 lg:py-32 bg-dot-grid-light">
+      <section className="bg-surface py-24 lg:py-32">
         <div className="container-px">
           <SectionHeading
             eyebrow="Our Growth"
@@ -110,12 +96,12 @@ export default function AboutPage() {
           />
 
           <div className="relative max-w-2xl mx-auto">
-            <div className="absolute left-[7px] top-2 bottom-2 w-px bg-navy-900/10" />
+            <div className="absolute left-[7px] top-2 bottom-2 w-px bg-black/10" />
             <div className="flex flex-col gap-10">
               {timeline.map((item, i) => (
                 <Reveal key={item.year} delay={i * 0.05} className="relative pl-10">
-                  <span className="absolute left-0 top-1.5 h-3.5 w-3.5 rounded-full bg-[#004ab7] ring-4 ring-gold-500/20" />
-                  <span className="tick-number text-[#004ab7] text-sm font-semibold">{item.year}</span>
+                  <span className="absolute left-0 top-1.5 h-3.5 w-3.5 rounded-full bg-gold-500 ring-4 ring-gold-500/20" />
+                  <span className="tick-number text-gold-600 text-sm font-semibold">{item.year}</span>
                   <h3 className="font-display font-semibold text-navy-900 text-lg mt-1">{item.title}</h3>
                   <p className="text-slate-600 text-sm mt-1.5 leading-relaxed">{item.description}</p>
                 </Reveal>

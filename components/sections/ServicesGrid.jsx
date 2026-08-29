@@ -11,9 +11,9 @@ export default function ServicesGrid({ limit }) {
   const list = limit ? services.slice(0, limit) : services;
 
   return (
-    <section className="relative bg-surface py-24 lg:py-32 bg-dot-grid-light">
-      <div className="container-px">
-        <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8 mb-16">
+    <section className="relative bg-[#F8F7F3] py-24 lg:py-32 overflow-hidden">
+      <div className="container-px relative">
+        <div className="mb-16">
           <SectionHeading
             eyebrow="What We Do"
             title="Estimating services engineered around your bid deadline."
@@ -21,30 +21,40 @@ export default function ServicesGrid({ limit }) {
           />
         </div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {list.map((service, i) => {
             const Icon = getIcon(service.icon);
             return (
               <motion.div
                 key={service.slug}
-                id={service.slug}
-                initial={{ opacity: 0, y: 28 }}
+                initial={{ opacity: 0, y: 24 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, amount: 0.2 }}
-                transition={{ duration: 0.8, delay: (i % 3) * 0.1, ease: [0.22, 1, 0.36, 1] }}
-                className="group relative rounded-2xl border border-navy-900/8 bg-white p-7 lift-hover shadow-sm hover:shadow-premium"
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: (i % 3) * 0.08 }}
+                className="group relative flex h-full flex-col rounded-xl bg-white border border-black/[0.06] p-8 overflow-hidden hover:shadow-[0_20px_60px_-15px_rgba(0,0,0,0.15)] hover:-translate-y-1 transition-all duration-500"
               >
-                <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#001D49] text-white group-hover:bg-[#004AB7] group-hover:text-white transition-colors duration-500">
+                <span className="absolute -top-2 -right-3 font-display text- font-bold leading-none text-black/[0.03] select-none">
+                  0{i + 1}
+                </span>
+                <div className="absolute top-0 left-8 right-8 h-px bg-gold-500 scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
+
+                {/* BLACK BG ICON */}
+                <div className="relative flex h-12 w-12 items-center justify-center rounded-xl bg-black text-white group-hover:bg-gold-500 group-hover:text-black transition-colors duration-300">
                   <Icon className="h-5 w-5" strokeWidth={2} />
                 </div>
-                <h3 className="mt-6 font-display text-lg font-semibold text-navy-900">{service.title}</h3>
-                <p className="mt-2.5 text-sm text-slate-600 leading-relaxed">{service.short}</p>
-                <Link
-                  href={`/services/${service.slug}`}
-                  className="mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-navy-900 group-hover:text-[#004AB7] transition-colors"
-                >
+
+                <h3 className="relative mt-7 font-display text- font-semibold text-black">
+                  {service.title}
+                </h3>
+                <p className="relative mt-3 text- text-slate-600 leading-relaxed flex-1">
+                  {service.short}
+                </p>
+
+                <Link href={`/services#${service.slug}`} className="relative mt-8 inline-flex items-center gap-2 text-sm font-semibold text-black mt-auto">
                   Learn more
-                  <ArrowUpRight className="h-3.5 w-3.5 transition-transform duration-500 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                  <span className="flex h-7 w-7 items-center justify-center rounded-full bg-black/5 group-hover:bg-gold-500 transition-colors">
+                    <ArrowUpRight className="h-3.5 w-3.5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+                  </span>
                 </Link>
               </motion.div>
             );

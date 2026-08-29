@@ -13,7 +13,7 @@ export default function ProjectsFilterGrid() {
   const filtered = active === "All" ? projects : projects.filter((p) => p.category === active);
 
   return (
-    <section className="bg-surface py-24 lg:py-32 bg-diagonal">
+    <section className="bg-surface py-24 lg:py-32">
       <div className="container-px">
         <LayoutGroup>
           <div className="flex flex-wrap items-center justify-center gap-3 mb-14">
@@ -21,14 +21,14 @@ export default function ProjectsFilterGrid() {
               <button
                 key={cat}
                 onClick={() => setActive(cat)}
-                className={`relative px-5 py-2.5 rounded-full text-sm font-medium transition-colors duration-500 ${
-                  active === cat ? "text-white" : "text-slate-500 hover:text-[#001D49]"
+                className={`relative px-5 py-2.5 rounded-full text-sm font-medium transition-colors duration-300 ${
+                  active === cat ? "text-navy-900" : "text-slate-500 hover:text-navy-900"
                 }`}
               >
                 {active === cat && (
                   <motion.span
                     layoutId="filter-pill"
-                    className="absolute inset-0 rounded-full bg-[#004ab7]"
+                    className="absolute inset-0 rounded-full bg-gold-500"
                     transition={{ type: "spring", stiffness: 350, damping: 28 }}
                   />
                 )}

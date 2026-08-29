@@ -12,11 +12,6 @@
   scroll-behavior: smooth;
 }
 
-html, body {
-  font-family: var(--font-poppins), ui-sans-serif, system-ui, sans-serif;
-}
-
-
 @media (prefers-reduced-motion: reduce) {
   * {
     animation-duration: 0.01ms !important;
@@ -37,7 +32,7 @@ body {
 }
 
 ::selection {
-  background-color: #2F66DE;
+  background-color: #f59e0b;
   color: #0f172a;
 }
 
@@ -48,15 +43,15 @@ body {
   background: #f1f5f9;
 }
 ::-webkit-scrollbar-thumb {
-  background: #05408C;
+  background: #f59e0b;
   border-radius: 999px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #2F66DE;
+  background: #f59e0b;
 }
 
 :focus-visible {
-  outline: 2px solid #2F66DE;
+  outline: 2px solid #f59e0b;
   outline-offset: 3px;
   border-radius: 2px;
 }
@@ -66,8 +61,8 @@ body {
 /* Blueprint grid backdrop */
 .bg-blueprint {
   background-color: #0f172a;
-  background-image: linear-gradient(rgba(47, 102, 222, 0.08) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(47, 102, 222, 0.08) 1px, transparent 1px);
+  background-image: linear-gradient(rgba(245, 158, 11, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(245, 158, 11, 0.08) 1px, transparent 1px);
   background-size: 44px 44px;
 }
 
@@ -78,38 +73,38 @@ body {
 }
 
 /* Surveyor corner brackets, used on cards / images */
-. {
+.corner-brackets {
   position: relative;
 }
-.::before,
-.::after {
+.corner-brackets::before,
+.corner-brackets::after {
   content: "";
   position: absolute;
   width: 18px;
   height: 18px;
-  border-color: #2F66DE;
+  border-color: #f59e0b;
   opacity: 0;
-  transition: opacity 0.5s ease, transform 0.5s ease;
+  transition: opacity 0.35s ease, transform 0.35s ease;
   z-index: 10;
 }
-.::before {
+.corner-brackets::before {
   top: 10px;
   left: 10px;
   border-top: 2px solid;
   border-left: 2px solid;
   transform: translate(4px, 4px);
 }
-.::after {
+.corner-brackets::after {
   bottom: 10px;
   right: 10px;
   border-bottom: 2px solid;
   border-right: 2px solid;
   transform: translate(-4px, -4px);
 }
-.:hover::before,
-.:hover::after,
-.:focus-within::before,
-.:focus-within::after {
+.corner-brackets:hover::before,
+.corner-brackets:hover::after,
+.corner-brackets:focus-within::before,
+.corner-brackets:focus-within::after {
   opacity: 1;
   transform: translate(0, 0);
 }
@@ -130,17 +125,16 @@ body {
 }
 
 .navbar-blur {
-  background: white;
+  background: rgba(11, 11, 12, 0.55);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  box-shadow: 0 4px 24px -8px rgba(0, 0, 0, 0.35);
 }
 
 /* Dimension / measurement line — a recurring "level line" motif */
 .dimension-line {
   position: relative;
   height: 1px;
-  background: rgba(47, 102, 222, 0.4);
+  background: rgba(245, 158, 11, 0.4);
 }
 .dimension-line::before,
 .dimension-line::after {
@@ -149,7 +143,7 @@ body {
   top: -4px;
   width: 1px;
   height: 9px;
-  background: rgba(47, 102, 222, 0.6);
+  background: rgba(245, 158, 11, 0.6);
 }
 .dimension-line::before {
   left: 0;
@@ -169,7 +163,7 @@ body {
 
 /* Gradient text */
 .text-gold-gradient {
-  background: linear-gradient(120deg, #7FA8F3 0%, #2F66DE 45%, #1C3E93 100%);
+  background: linear-gradient(120deg, #fcc24d 0%, #f59e0b 45%, #d17e06 100%);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -183,79 +177,30 @@ body {
 
 /* Card hover lift */
 .lift-hover {
-  transition: transform 0.55s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.55s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.55s ease;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 .lift-hover:hover {
-  transform: translateY(-8px);
-}
-
-/* Dot-grid pattern for light sections so they don't read flat */
-.bg-dot-grid {
-  background-image: radial-gradient(rgba(15, 23, 42, 0.12) 1px, transparent 1px);
-  background-size: 22px 22px;
-}
-
-.bg-dot-grid-light {
-  background-image: radial-gradient(rgba(15, 23, 42, 0.07) 1px, transparent 1px);
-  background-size: 22px 22px;
-}
-
-/* Diagonal accent pattern */
-.bg-diagonal {
-  background-image: repeating-linear-gradient(
-    135deg,
-    rgba(15, 23, 42, 0.035) 0px,
-    rgba(15, 23, 42, 0.035) 1px,
-    transparent 1px,
-    transparent 14px
-  );
-}
-
-/* Custom cursor */
-@media (pointer: fine) {
-  body {
-    cursor: none;
-  }
-  a,
-  button,
-  input,
-  textarea,
-  select,
-  [role="button"] {
-    cursor: none;
-  }
-}
-
-.cursor-dot {
-  pointer-events: none;
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 200;
-  width: 8px;
-  height: 8px;
-  border-radius: 999px;
-  background: #2F66DE;
-  transform: translate(-50%, -50%);
-}
-
-.cursor-ring {
-  pointer-events: none;
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 200;
-  width: 38px;
-  height: 38px;
-  border: 1.5px solid rgba(47, 102, 222, 0.55);
-  border-radius: 999px;
-  transform: translate(-50%, -50%);
+  transform: translateY(-6px);
 }
 
 /* Marquee track */
 .marquee-track {
   display: flex;
   width: max-content;
+}
+
+/* Custom cursor dot (desktop only, ambient) */
+.cursor-ring {
+  pointer-events: none;
+  position: fixed;
+  z-index: 100;
+  width: 34px;
+  height: 34px;
+  border: 1px solid rgba(245, 158, 11, 0.6);
+  border-radius: 999px;
+  transform: translate(-50%, -50%);
+  transition: opacity 0.2s ease, width 0.25s ease, height 0.25s ease, border-color 0.25s ease;
+  mix-blend-mode: normal;
 }
 
 .container-px {
@@ -267,10 +212,4 @@ body {
     padding-left: 4rem;
     padding-right: 4rem;
   }
-}
-
-/* Show native pointer cursor on navbar links when hovered */
-body.cursor-native-active nav a,
-body.cursor-native-active nav button {
-  cursor: pointer !important;
 }

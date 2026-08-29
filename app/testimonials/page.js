@@ -7,7 +7,7 @@ import { Star } from "lucide-react";
 
 export const metadata = {
   title: "Testimonials",
-  description: "Hear from builders, developers and contractors who rely on Sigma Estimations for accurate construction estimating.",
+  description: "Hear from builders, developers and contractors who rely on BuildNova for accurate construction estimating.",
 };
 
 export default function TestimonialsPage() {
@@ -17,31 +17,17 @@ export default function TestimonialsPage() {
         eyebrow="Client Testimonials"
         title="What builders say after working with us."
         description="Real feedback from the developers, architects and contractors who trust our numbers on every bid."
-        sliderImages={[
-          {
-            src: "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?q=80&w=1400&auto=format&fit=crop",
-            alt: "Contractor and client shaking hands on site",
-          },
-          {
-            src: "https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=1400&auto=format&fit=crop",
-            alt: "Team meeting to review a project estimate",
-          },
-          {
-            src: "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?q=80&w=1400&auto=format&fit=crop",
-            alt: "Client reviewing project plans with a consultant",
-          },
-        ]}
       />
       <TestimonialsSlider showHeading={false} />
 
-      <section className="bg-navy-950 py-24 lg:py-32">
+      <section className="bg-black py-24 lg:py-32">
         <div className="container-px grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {testimonials.map((t, i) => (
             <Reveal key={t.name} delay={(i % 3) * 0.08}>
               <div className="rounded-2xl glass p-7 h-full flex flex-col">
                 <div className="flex gap-1 mb-4">
                   {Array.from({ length: t.rating }).map((_, idx) => (
-                    <Star key={idx} className="h-3.5 w-3.5 fill-gold-500 text-[#004ab1]" />
+                    <Star key={idx} className="h-3.5 w-3.5 fill-gold-500 text-gold-500" />
                   ))}
                 </div>
                 <p className="text-slate-200 text-sm leading-relaxed flex-1">"{t.quote}"</p>

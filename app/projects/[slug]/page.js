@@ -39,17 +39,17 @@ export default async function ProjectDetailPage({ params }) {
 
   return (
     <>
-      <section className="relative bg-navy-950 pt-36 pb-0 overflow-hidden">
+      <section className="relative bg-black pt-36 pb-0 overflow-hidden">
         <div className="container-px relative pb-10">
           <Link
             href="/projects"
-            className="inline-flex items-center gap-2 text-sm text-slate-300 hover:text-[#004ab7] transition-colors mb-8"
+            className="inline-flex items-center gap-2 text-sm text-slate-300 hover:text-gold-400 transition-colors mb-8"
           >
             <ArrowLeft className="h-4 w-4" />
             Back to Projects
           </Link>
           <Reveal>
-            <span className="eyebrow text-[#004ab7]">{project.category}</span>
+            <span className="eyebrow text-gold-400">{project.category}</span>
           </Reveal>
           <Reveal delay={0.08}>
             <h1 className="font-display font-semibold text-white text-4xl sm:text-5xl mt-4 leading-[1.1]">
@@ -66,7 +66,7 @@ export default async function ProjectDetailPage({ params }) {
             className="object-cover"
             sizes="100vw"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-navy-950 via-navy-950/10 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-black via-black/10 to-transparent" />
         </div>
       </section>
 
@@ -74,7 +74,7 @@ export default async function ProjectDetailPage({ params }) {
         <div className="container-px grid lg:grid-cols-3 gap-12">
           <div className="lg:col-span-2">
             <Reveal>
-              <h2 className="font-display text-2xl font-semibold text-navy-900 mb-5">Project Overview</h2>
+              <h2 className="font-display text-2xl font-semibold text-black mb-5">Project Overview</h2>
               <p className="text-slate-600 leading-relaxed text-base">{project.description}</p>
             </Reveal>
 
@@ -87,7 +87,7 @@ export default async function ProjectDetailPage({ params }) {
                   "Ongoing budget tracking through construction",
                 ].map((item) => (
                   <div key={item} className="flex items-start gap-3 rounded-xl bg-white border border-navy-900/8 p-4">
-                    <span className="h-1.5 w-1.5 rounded-full bg-[#004ab7] mt-2 shrink-0" />
+                    <span className="h-1.5 w-1.5 rounded-full bg-gold-500 mt-2 shrink-0" />
                     <span className="text-sm text-slate-700">{item}</span>
                   </div>
                 ))}
@@ -96,12 +96,12 @@ export default async function ProjectDetailPage({ params }) {
           </div>
 
           <Reveal direction="left">
-            <div className="rounded-2xl bg-navy-900 p-7 sticky top-28">
+            <div className="rounded-2xl bg-black p-7 sticky top-28">
               <h3 className="font-display text-white font-semibold mb-6">Project Facts</h3>
               <div className="flex flex-col gap-5">
                 {facts.map((fact) => (
                   <div key={fact.label} className="flex items-start gap-3">
-                    <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-white/5 text-[#004ab7]">
+                    <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-white/5 text-gold-400">
                       <fact.icon className="h-4 w-4" />
                     </span>
                     <div>
@@ -120,7 +120,7 @@ export default async function ProjectDetailPage({ params }) {
       </section>
 
       {related.length > 0 && (
-        <section className="bg-navy-950 py-20 lg:py-28">
+        <section className="bg-black py-20 lg:py-28">
           <div className="container-px">
             <h2 className="font-display text-2xl font-semibold text-white mb-10">More {project.category} Projects</h2>
             <div className="grid md:grid-cols-3 gap-6">

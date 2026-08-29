@@ -1,16 +1,16 @@
 import Link from "next/link";
 import Button from "@/components/ui/Button";
-import Logo from "@/components/ui/Logo";
+import { Compass } from "lucide-react";
 
 export default function NotFound() {
   return (
-    <section className="relative min-h-screen flex items-center justify-center bg-navy-950 overflow-hidden pt-24">
+    <section className="relative min-h-screen flex items-center justify-center bg-black overflow-hidden pt-24">
       <div className="absolute inset-0 bg-blueprint opacity-30" />
       <div className="relative container-px text-center max-w-lg">
-        <div className="inline-flex mb-8">
-          <Logo className="h-20 w-32" variant="white" />
-        </div>
-        <div className="eyebrow text-[#004ab7] mb-4">Error 404</div>
+        <span className="inline-flex h-16 w-16 items-center justify-center rounded-2xl bg-gold-500 text-black mb-8">
+          <Compass className="h-8 w-8" />
+        </span>
+        <div className="eyebrow text-gold-400 mb-4">Error 404</div>
         <h1 className="font-display text-3xl sm:text-4xl font-semibold text-white leading-tight">
           This page hasn't been surveyed yet.
         </h1>
@@ -18,7 +18,7 @@ export default function NotFound() {
           The page you're looking for may have moved or no longer exists.
         </p>
         <div className="mt-9 flex justify-center">
-          <Button href="/" variant="primary" className="!bg-[#004AB7] hover:!bg-[#05408C] text-white">
+          <Button href="/" variant="primary">
             Back to Home
           </Button>
         </div>
